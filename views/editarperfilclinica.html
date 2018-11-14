@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <script src="../assets/import/jquery/dist/jquery.min.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+    <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+    <link rel="stylesheet" href="../assets/import/jquery-nice-select-1.1.0/css/nice-select.css">
+
+
+    <title>Social Medica - Editar Perfil</title>
+</head>
+<body onload="getconfig();">
+
+
+    <div class="progress1 container1" id="loading" style="display:none">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+
+
+
+      <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+            <a class="navbar-brand" href="#">
+                    <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
+
+                    <span>.</span>
+        
+            <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            </a>
+        
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        
+            </div>
+        
+        
+          </nav>
+
+    
+        <div id="alerplaceholder"></div>
+
+
+<div class="jumbotron container animated fadeIn media-custom">
+    <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" >
+                </div>
+
+                <div class="form-group col-md-6">
+                        <label for="domicilio">Domicilio</label>
+                        <input type="text" class="form-control" id="domicilio" placeholder="Domicilio" name="domicilio">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="pais">Pais</label>
+                    <select class="form-control selectlargo" id="pais" name="pais" onchange="function test(){console.log(this.value)}" required>
+                        </select>    
+              </div>
+
+                <div class="form-group col-md-6">
+                        <label for="telefono">Telefono</label>
+                        <input type="text" class="form-control" id="telefono" placeholder="Telefono" name="telefono" id="telefono">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                        <label for="contacto">Contacto</label>
+                        <input type="text" class="form-control" id="contacto" rows="3" name="contacto" id="contacto"></input>
+                 </div>
+                 <div class="form-group col-md-6">
+                        <label for="formadepago">Forma de Pago</label>
+                        <input type="text" class="form-control" id="formadepago" rows="3" name="formadepago" id="formadepago"></input>
+                 </div>
+            </div>
+
+            <div class="form-group">
+                    <label for="tporespuesta">Tiempo de Respuesta</label>
+                    <input type="text" class="form-control" id="tporespuesta" rows="3" name="tporespuesta" id="tporespuesta"></textarea>
+             </div>
+
+             <div class="form-group">
+                <label for="image">Subir Foto</label>
+                <input type="file" class="form-control-file" id="image" name="image">
+             </div>
+
+
+             
+            <div id="fotoactual">
+                    <label for="imagenperfilactual">Imagen anterior</label>
+                    <img src="" alt="" id="imagenperfilactual" class="imagenperfilactual">
+                </div>
+         
+
+
+            <label for="checkform">Equipamiento disponible:</label>
+                <div class="" id="checkform" style="text-align: center;">
+
+                    <div class="form-row justify-content-center " >
+                        <div class="custom-control custom-checkbox col-md-4">
+                            <input type="checkbox" class="custom-control-input" id="mr" name="mr">
+                            <label class="custom-control-label" for="mr">MR</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox col-md-4">
+                            <input type="checkbox" class="custom-control-input" id="rx" name="rx">
+                            <label class="custom-control-label" for="rx">RX</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox col-md-4">
+                            <input type="checkbox" class="custom-control-input" id="mg" name="mg">
+                            <label class="custom-control-label" for="mg">MG</label>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center " >
+                            <div class="custom-control custom-checkbox col-md-4">
+                                <input type="checkbox" class="custom-control-input" id="cr" name="cr">
+                                <label class="custom-control-label" for="cr">CR</label>
+                            </div>
+    
+                            <div class="custom-control custom-checkbox col-md-4">
+                                <input type="checkbox" class="custom-control-input" id="ct" name="ct">
+                                <label class="custom-control-label" for="ct">CT</label>
+                            </div>
+    
+                            <div class="custom-control custom-checkbox col-md-4">
+                                <input type="checkbox" class="custom-control-input" id="dx" name="dx">
+                                <label class="custom-control-label" for="dx">DX</label>
+                            </div>
+                        </div>  
+                        <div class="form-row justify-content-center" >
+                                <div class="custom-control custom-checkbox col-md-4">
+                                    <input type="checkbox" class="custom-control-input" id="es" name="es">
+                                    <label class="custom-control-label" for="es">ES</label>
+                                </div>
+        
+                                <div class="custom-control custom-checkbox col-md-4">
+                                    <input type="checkbox" class="custom-control-input" id="nm" name="nm">
+                                    <label class="custom-control-label" for="nm">NM</label>
+                                </div>
+        
+                                <div class="custom-control custom-checkbox col-md-4">
+                                    <input type="checkbox" class="custom-control-input" id="ot" name="ot">
+                                    <label class="custom-control-label" for="ot">OT</label>
+                                </div>
+                            </div> 
+                            <div class="form-row justify-content-center" >
+                                    <div class="custom-control custom-checkbox col-md-4">
+                                        <input type="checkbox" class="custom-control-input" id="pt" name="pt">
+                                        <label class="custom-control-label" for="pt">PT</label>
+                                    </div>
+            
+                                    <div class="custom-control custom-checkbox col-md-4">
+                                        <input type="checkbox" class="custom-control-input" id="px" name="px">
+                                        <label class="custom-control-label" for="px">PX</label>
+                                    </div>
+            
+                                    <div class="custom-control custom-checkbox col-md-4">
+                                        <input type="checkbox" class="custom-control-input" id="rf" name="rf">
+                                        <label class="custom-control-label" for="rf">RF</label>
+                                    </div>
+                                </div>
+                    <div class="form-row" >
+                            <div class="custom-control custom-checkbox col-md-4">
+                                <input type="checkbox" class="custom-control-input" id="sc" name="sc">
+                                <label class="custom-control-label" for="sc">SC</label>
+                            </div>
+    
+                            <div class="custom-control custom-checkbox col-md-4">
+                                <input type="checkbox" class="custom-control-input" id="us" name="us">
+                                <label class="custom-control-label" for="us">US</label>
+                            </div>
+    
+                            <div class="custom-control custom-checkbox col-md-4">
+                                <input type="checkbox" class="custom-control-input" id="xa" name="xa">
+                                <label class="custom-control-label" for="xa">XA</label>
+                            </div>
+                        </div>
+                    
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg botonenviar" onclick="modificar()">Enviar</button>
+
+    </form>
+</div>
+
+<script >
+
+    $( document ).ready(function() {
+    
+    menu();    
+
+     flags('pais');
+
+    selectItemByValue(document.getElementById('pais'),'ZW');
+
+    });
+  
+</script>
+
+
+
+
+<script src="../assets/import/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/editarperfilclinica.js" ></script>
+<script src="../assets/js/navbar.js" ></script>
+<script src="../assets/import/formvalidator/dist/jquery.validate.min.js"></script>
+<script src="../assets/import/flags/flags.js"></script>
+<script src="../assets/import/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
+
+
+</body>
+</html>

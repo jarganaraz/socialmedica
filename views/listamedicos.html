@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+    <link rel="stylesheet" href="../assets/styles/display410.css">
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+
+    <script src="../assets/import/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/import/notify/notify.min.js"></script>
+    <script src="../assets/js/listamedicos.js"></script>
+    <script src="../assets/import/bootstrap/js/bootstrap.min.js" ></script>
+    <script src="../assets/import/waypoint/jquery.waypoints.min.js"></script>
+    <script src="../assets/import/pagination/jquery.twbsPagination.min.js"></script>
+    <script src="../assets/js/navbar.js" ></script>
+    <script src="../assets/animation/main.js"></script>
+
+
+    <title>Social Medica - Lista Medicos - </title>
+</head>
+<body onload="getconfig()">
+
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+            <a class="navbar-brand" href="#">
+                <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
+
+                <span>.</span>
+    
+        <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        </a>
+            
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            
+                </div>
+            
+            
+              </nav>
+
+
+            <!--  <div class="container ">
+                  <div class="col-md-6 buscadordoctores">
+        
+                    <form id="formfiltro">
+                      <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar..." name="filtro" id="filtro">
+                        <span class="input-group-btn">
+                          <button class="btn btn-primary buttonbuscadores" type="submit"  id="filter" name="filter">Buscar</button>
+                        </span>
+                      </div>
+                    </form>
+                  </div>
+              </div>-->
+             
+        <div id="listausuariosdiv">
+            <div id="container1 animated fadeIn">
+
+         <div class=" container animated fadeIn" id="container">       
+                <div class=" listausers animated fadeIn " id="listausuarios"></div>
+                <div class=" listausers animated fadeIn " id="listausuarios2"></div>
+            </div>
+           
+                <div contenteditable="false" id="listausuarios1" class="listausuarios pagination center animated fadeIn slow" >
+                        <div>
+                                <ul id="pagination-demo" class="paginationlist"></ul>
+                            </div>
+                </div>
+            </div>
+            </div>
+
+            
+             
+    
+</body>
+
+
+<script>
+ $( document ).ready(function() {    
+    menu();    
+
+ });
+
+
+ //main();
+ $('#formfiltro').submit(function () {
+
+ filtrar();
+ return false;
+});
+
+</script>
+
+</html>

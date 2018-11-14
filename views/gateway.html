@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../assets/import/jquery/dist/jquery.min.js"></script>
+        <link rel="preconnect" href="http://localhost:3800">
+        <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+        <script src="../assets/import/bootstrap/js/bootstrap.min.js" async></script>
+        <link rel="stylesheet" href="../assets/styles/principal.css">
+        <script src="../assets/js/navbar.js" ></script>
+        <link rel="stylesheet" href="../assets/styles/display410.css">
+        <link rel="stylesheet" href="../assets/styles/animate.css">
+    <title>Contratar GW - Social Medica - </title>
+</head>
+<body>
+    
+                <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+                                <a class="navbar-brand" href="#">
+                                                <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
+                        
+                                                <span>.</span>
+                                    
+                                        <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                          <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                        </a>
+                            
+                            
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            
+                            
+                                </div>
+                            
+                            
+                              </nav>
+
+
+
+
+
+    <div class="jumbotron container animatedgateway" id="gatewayinfo">
+
+        <div class="row">
+
+                <div class="row centertext"><h2>INSTALACION DE GATEWAY</h2> </div>
+
+                <div class="row centertext"><h4>PARA PODER ENVIAR LOS ESTUDIOS SE DEBE INSTALAR UN GATEWAY</h4> </div>
+
+                <div class="row centertext"><h4>REQUERIMIENTOS NECESARIOS :</h4> </div>
+              
+        </div>
+
+        <div class="row   rounded separadores">
+                       
+                        <ul>
+                                <li> CPU con Windows 7 o 10 con RED a los equipos de diagnostico y conexión a internet.</li>
+                                <li>Procesador  tipo I3</li>
+                                <li>4 Gb Memoria RAM </li>
+                         </ul>
+          
+        </div>
+
+
+        <div class="row">
+            <button class="btn btn-outline-primary buttonsolicitar" id="buttonsolicitar">Solicitar Instalacion</button>
+        </div>
+
+    </div>
+
+
+    <div id="formcontacto" class=" jumbotron container visualizarfalse" >
+
+
+
+                <form class="row" id="recuperarpassform"> 
+                                                                    
+                                  
+                                <div class="form-group col-md-12">             
+                                         <label class="labelform" for="name">Email</label>
+                                        <input class="form-control" id="email" placeholder="ejemplo@ejemplo.com" minlength="5" type="text" required name="email">
+                                </div>
+
+                                <div class="form-group col-md-12">             
+                                        <label class="labelform" for="name">Nombre y Apellido</label>
+                                        <input class="form-control" id="email" placeholder="ejemplo@ejemplo.com" minlength="5" type="text" required name="email">
+                                </div>
+
+                                <div class="form-group col-md-12">             
+                                        <label class="labelform" for="name">Informacion Adicional</label>
+                                        <textarea class="form-control" id="email" placeholder="ejemplo@ejemplo.com" minlength="5" type="text" required name="email"></textarea>
+                                </div>
+                                                                                                                                                                                       
+                        
+                                <div class="row" style="width: 100%;">
+                        
+                                        <button class="btn btn-primary butnloguear"  id="buttonenviarmail" >Enviar Email</button>
+                        
+                                </div>
+                </form>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+<script>
+        $( document ).ready(function() {    
+           menu();     
+       
+        })
+       
+
+
+        $("#buttonsolicitar").click(function(){
+                document.getElementById('formcontacto').classList.remove('visualizarfalse');
+                document.getElementById('formcontacto').classList.add('visualizartrue','slideInUp','slow', 'animated');
+                document.getElementById('gatewayinfo').classList.remove('animatedgateway');
+                document.getElementById('gatewayinfo').classList.add('animated' , 'slideInUp','slow');
+                
+        })
+
+
+
+</script>
+
+
+
+</html>

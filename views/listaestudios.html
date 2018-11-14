@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <link rel="stylesheet" href="../assets/styles/display410.css">
+            
+    <script src="../assets/import/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+    <script src="../assets/import/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+    <link rel="stylesheet" href="../assets/import/fontawesome/css/all.min.css">
+    <script src="../assets/js/listaestudios.js"></script>
+    <script src="../assets/import/pagination/jquery.twbsPagination.min.js"></script>
+
+    <link rel="stylesheet" href="../assets/styles/display410.css">
+    <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Social Medica  - Lista Estudios</title>
+</head>
+<body onload="direct()">
+    
+
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+                <a class="navbar-brand" href="#">
+                        <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
+
+                        <span>.</span>
+            
+                <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                </a>
+            
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            
+                </div>
+            
+            
+              </nav>
+
+<div class="jumbotron container media-custom">
+    <h4>Lista Estudios</h4>
+
+
+
+
+<div id="listausuariosdiv">
+    <div id="container1 animated fadeIn">
+
+ <div class=" container animated fadeIn" id="container">       
+    <div class="col listausers animated fadeIn" id="listausuarios">
+
+
+        <table class="table table-striped animated fadeIn " id="tableid">
+            <thead>
+              <tr>
+                <th scope="col"class="col1">Descripcion</th>
+                <th scope="col"class="col2">Modalidad</th>
+                <th scope="col"class="col3">Fecha</th>
+                <th scope="col"class="col4">Nombre </th>
+                <th scope="col"class="col5">Sexo</th>
+                <th scope="col"class="col6" style="display:none;">Id Paciente</th>
+                <th scope="col"class="col7" style="display:none;">Uid Estudio</th>
+
+              </tr>
+            </thead>
+            <tbody id="tablallenar">
+
+            </tbody>
+          </table>
+
+
+
+
+        </div>
+    </div>
+        <!--<div class="listausuarios row" id="listausuarios"></div>-->
+        <div contenteditable="false" id="listausuarios1" class="listausuarios" >
+                    <div class="pagination center">
+                        <ul id="pagination-demo" ></ul>
+                    </div>
+        </div>
+    </div>
+
+
+<script>
+    menu();
+   
+/*
+    $(document).ready(function() {
+    $(document).on("click", "#tableid tbody tr", function() {
+        //some think
+        window.open('https://virtualfilm.visualmedica.com/viewer/index.php/loginsl/onlyViewerLoggin/demo');
+    });
+});*/
+
+</script>    
+</body>
+</html>

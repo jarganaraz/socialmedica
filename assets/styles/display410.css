@@ -1,0 +1,88 @@
+@media (max-width: 420px) {
+
+    .hovereffect a, .hovereffect p{
+        color: #1b1a1a !important;
+        opacity: 1 !important; 
+        transform: none !important;
+        margin-top: 70%;
+        font-size: 14px;
+    }
+
+    .imagenbandera{
+
+        text-align: -webkit-right;
+        max-height: 30px;
+        float: right;
+        clear: right;
+        margin-top: -15px;
+        margin-right: -10%;
+        margin-bottom: 2%;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 25px;
+        width: 25px;
+    
+    }
+
+    .separadores{
+        margin-top: 3%;
+    }
+    .cuadromedico{
+        margin-right: 2%;
+        padding: 0%;
+        display: flex !important;
+    }
+
+    .botonestudio {
+        margin-top: 1.5%;
+        font-size: 13px !important;
+        padding: 2px;
+    }
+
+    .botoneslistausers {
+        margin-right: 10%;
+        margin-top: 3%;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .botoneslistausers1 {
+        margin-right: 10%;
+        margin-top: 3%;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .col5{
+        display: none;
+    }
+
+
+    .col6{
+        display: none;
+    }
+
+    
+    .col7{
+        display: none;
+    }
+
+    .col4{
+        display: none;
+    }
+
+    .table{
+        font-size: 8px !important;
+    }
+
+  }
+
+  .col6{
+    display: none;
+}
+
+
+.col7{
+    display: none;
+}

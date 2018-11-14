@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+    <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+    <link rel="stylesheet" href="../assets/import/jquery-nice-select-1.1.0/css/nice-select.css">
+
+
+
+    <title>Social Medica - Registro</title>
+ 
+</head>
+<body>
+
+        <div id="alerplaceholder"></div>
+
+        
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+                        <a class="navbar-brand" href="#">
+                                        <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
+                
+                                        <span>.</span>
+                            
+                                <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>
+                                </a>
+                    
+                    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    
+                        </div>
+                    
+                    
+                      </nav>
+
+        <div class="jumbotron  container animated fadeIn">
+            
+            <h2>
+            Registro Empresa
+            </h2>
+       
+           <form class="registrousuario" style="margin:auto;" id="registoruser"> 
+                    <div class="form-row ">
+                            <div class="form-group col-md-6">
+                              <label for="name">E-mail</label>
+                              <input  class="form-control" id="email" email="true" placeholder="E-mail" minlength="3" type="text" required name="email">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="surname">Nombre</label>
+                              <input  type="text" class="form-control uppercase" id="name" minlength="3" placeholder="Nombre" required name="name">
+                            </div>
+                    </div>
+                     <div class="form-row">
+                            <div class="form-group col-md-6">
+                                 <label for="nickname">Forma de Pago</label>
+                                  <input  type="text" class="form-control uppercase" id="" minlength="3" placeholder="Tarjeta de Credito"  name="formadepago">      
+                            </div>
+                            <div class="form-group col-md-6">
+                                 <label for="tporespuesta">Tiempo de Respuesta Requerido</label>
+                                 <input  type="text" class="form-control uppercase" placeholder="48 hs."  name="tporespuesta">
+                             </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                                <label for="pais">Pais</label>
+                                <select class="form-control selectlargo" id="pais1" name="pais" required>
+                                    </select>    
+                          </div>
+                            <div class="form-group col-md-6">
+                                 <label for="domicilio">Domicilio</label>
+                                 <input  type="text" class="form-control uppercase" placeholder="calle calle 1234"  id="domicilio" required name="domicilio">
+                             </div>
+                    </div>
+                    <div class="form-row">
+                            <div class="form-group col-md-6">
+                                 <label for="telefono">Telefono</label>
+                                  <input  type="text" class="form-control" placeholder="TELEFONO" minlength="3" id="telefono"  required name="telefono">      
+                            </div>
+                            <div class="form-group col-md-6">
+                                 <label for="contacto"> Nombre de Contacto</label>
+                                 <input  type="text" class="form-control uppercase" placeholder="Dr. Juam Jose"  required name="contacto">
+                             </div>
+                    </div>
+                    <div  class="form-row">
+                            <div class="form-group col-md-6">
+                                    <label for="password">Password</label>
+                                    <input  type="password" class="form-control" minlength="5" id="password" placeholder="Password" required name="password">
+                            </div>
+                            <div class="form-group col-md-6">
+                                    <label for="confirmpassword">Repetir Password</label>
+                                    <input  type="password" class="form-control" id="repassword" minlength="5" placeholder="Password" required name="repassword">
+                            </div>
+                    </div>
+                          <button class="btn btn-primary botonenviar butnloguear" >Registro</button>
+            </form>
+      
+
+    </div>
+    
+</body>
+
+<script src="../assets/import/jquery/dist/jquery.min.js" ></script>
+<script src="../assets/import/formvalidator/dist/jquery.validate.min.js"></script>
+<script src="../assets/import/bootstrap/js/bootstrap.min.js" async></script>
+<script src="../assets/import/flags/flags.js"></script>
+<script src="../assets/js/registroempresa.js" ></script>
+<script src="../assets/import/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
+<script src="../assets/js/navbar.js"></script>
+
+<script >
+
+
+
+
+
+         flags('pais1');
+
+       /* $(document).ready(function() {
+                $('select').niceSelect();
+        });*/
+
+         $.validator.messages.equalTo = 'Repita la contaseña';
+         $.validator.messages.required = 'Este campo es obligatorio';
+         $.validator.messages.remote = 'Se encuentra en uso';
+         $.validator.messages.email = 'Debe ingresar un E-mail valido';
+         $.validator.messages.minlength= jQuery.validator.format("Debe tener mas de {0} caracteres.");
+         
+         $("#registoruser").validate({
+                rules: {
+                        password: "required",
+                        repassword: {
+                                required:true,
+                                equalTo: "#password"
+                        },
+                        telefono: {
+                                required: true,
+                                digits: true,                       
+                        },
+                        name:{
+                                required:true
+                        },
+                        domicilio:{
+                                required: true
+                        },
+                        email:{
+                                required: true,
+                                email:true,
+                                remote:{
+                                        url:"http://192.168.2.236:3800/api/checkmail",//mongo
+                                        type:"post",
+                                        data:{
+                                                email:  function(){return $( "#email" ).val();}
+                                        }
+        
+                                }
+        
+                        },
+
+                },
+                messages: {
+        
+                        equalTo: "Las contraseñas deben coincidir",
+                        number: "Ingrese un numero valido",
+                        digits: "Solo se aceptan digitos",
+                        //email: "Ingrese un email valido",
+                
+                }
+                
+         });
+        
+        
+        var form = $( "#registoruser" );
+        $( "button" ).click(function() {
+          if(form.valid()){
+                validar()
+          }
+        });
+        
+        
+        </script>
+
+
+</html>

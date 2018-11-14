@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+    <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+    <link rel="stylesheet" href="../assets/import/jquery-nice-select-1.1.0/css/nice-select.css">
+
+
+
+    <title>Social Medica - Registro</title>
+</head>
+<body>
+        <div id="alerplaceholder"></div>
+
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+                        <a class="navbar-brand" href="#">
+                                        <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
+                
+                                        <span>.</span>
+                            
+                                <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>
+                                </a>
+                    
+                    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    
+                        </div>
+                    
+                    
+                      </nav>
+
+    <div class="jumbotron container animated fadeIn slow">
+
+        <h2>
+                Registro Usuario
+        </h2>
+         
+           <form class=" registrousuario" style="margin:auto;" id="registoruser"> 
+                    <div class="form-row ">
+                            <div class="form-group col-md-6">
+                              <label for="name">Nombre</label>
+                              <input  class="form-control uppercase" id="name" placeholder="Nombre" minlength="3" type="text" required name="name" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="surname">Apellido</label>
+                              <input  type="text" class="form-control uppercase" id="surname" minlength="3" placeholder="Apellido" required name="surname" required>
+                            </div>
+                    </div>
+                     <div class="form-row">
+                            <div class="form-group col-md-6">
+                                  <label for="pais">Pais</label>
+                                  <select class="form-control selectlargo" id="pais1" name="pais" required>
+                                      </select>    
+                            </div>
+                            <div class="form-group col-md-6">
+                                 <label for="telefono">Telefono</label>
+                                 <input  type="text" class="form-control uppercase" id="telefono" placeholder="telefono"  name="telefono" required data-rule-number=”true” number>
+                             </div>
+                    </div>
+                    <div  class="form-row">
+                            <div class="form-group col-md-6">
+                                    <label for="email">E-Mail</label>
+                                    <input  type="email" class="form-control" id="email" placeholder="E-MAIL" minlength="5"  name="email" email="true" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                        <label for="password">Nombre Informante</label>
+                                        <input  type="text" class="form-control" id="ninformante" placeholder="NAPELLIDO" minlength="4" name="ninformante"required>
+                                </div>
+                    </div>
+
+                    <div  class="form-row">
+                                <div class="form-group col-md-6">
+                                        <label for="password">Password</label>
+                                        <input  type="password" class="form-control" id="password" placeholder="PASSWORD" minlength="5" name="password" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                        <label for="password">Repetir Password</label>
+                                        <input  type="password" class="form-control" id="repassword" placeholder="PASSWORD" minlength="5" name="repassword" required>
+                                </div>
+                </div>
+
+                          <button class="btn btn-primary butnloguear">Registro</button>
+            </form>
+      
+
+    </div>
+    
+</body>
+
+<script src="../assets/import/jquery/dist/jquery.min.js" ></script>
+<script src="../assets/import/formvalidator/dist/jquery.validate.min.js"></script>
+<script src="../assets/import/flags/flags.js"></script>
+<script src="../assets/import/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/registrousuario.js"></script>
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/import/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
+
+
+<script >
+
+
+ flags('pais1');
+
+ /*$(document).ready(function() {
+  $('select').niceSelect();
+});*/
+
+ $.validator.messages.equalTo = 'Repita la contaseña';
+ $.validator.messages.required = 'Este campo es obligatorio';
+ $.validator.messages.remote = 'El usuario se encuentra en uso';
+ $.validator.messages.email = 'Debe ingresar un E-mail valido';
+ $.validator.messages.minlength= jQuery.validator.format("Debe tener mas de {0} caracteres.");
+ 
+ $("#registoruser").validate({
+        rules: {
+                password: "required",
+                repassword: {
+                        required:true,
+                        equalTo: "#password"
+                },
+                telefono: {
+                        required: true,
+                        digits: true,                       
+                },
+                name:{
+                        required:true
+                },
+                surname:{
+                        required: true
+                },
+                email:{
+                        required: true,
+                        email:true,
+                        remote:{
+                                url:"http://192.168.2.236:3800/api/checkmail",
+                                type:"post",
+                                data:{
+                                        email:  function(){return $( "#email" ).val();}
+                                }
+
+                        }
+
+                },
+                ninformante:{
+                        required: true,
+                        remote:{
+                                url: "http://192.168.2.236:3000/medico/comprobarusuario",
+                                type: "post",
+                                data: {
+                                                username : function(){return $( "#ninformante" ).val();}
+                                        },
+                        },
+                }
+        },
+        messages: {
+
+                equalTo: "Las contraseñas deben coincidir",
+                number: "Ingrese un numero valido",
+                digits: "Solo se aceptan digitos",    
+        }
+        
+ });
+
+
+var form = $( "#registoruser" );
+$( "button" ).click(function() {
+  if(form.valid()){
+        validar();
+  }
+});
+
+
+</script>
+
+
+</html>

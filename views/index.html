@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+    <!--    CSS    -->
+    <link rel="stylesheet" href="../assets/import/OwlCarousel2-develop/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/import/OwlCarousel2-develop/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+
+
+
+    <title>Social Medica</title>
+</head>
+<body onload="getCookie('cookiesocialmedica')">
+
+
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+                <a class="navbar-brand" href="#">
+                        <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
+
+                        <span>.</span>
+            
+                <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                </a>
+            
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            
+                </div>
+            
+            
+              </nav>
+
+              <div id="alerplaceholder"></div>
+
+<div>
+
+
+        <div class="owl-carousel owl-theme">
+                <div> 
+             <img src="../assets/images/banner.jpg" alt=""></div>
+            
+                <div> <img src="../assets/images/banner2.jpg" alt=""></div>
+        </div>
+
+    <div class="progress1 container1" id="loading" style="display:none">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+    </div>
+    
+
+
+        
+<!--
+<div class="jumbotron container jumbotronmodificado animated fadeInUp slow media-custom ">
+
+<div class="row row1 contenedorcompleto">
+
+        
+    <div class="col">
+        <div class="row">
+                <h4>Si ud tiene una cuenta lo invitamos a Iniciar sesión</h4>
+        </div>
+    <form class="registrousuario" id="registoruser"> 
+        <div class="row formbotonseparador">
+                    <div class="form-row ">
+                          
+                        <div class="row">
+                            <div class="form-group col-md-6">             
+                                <label class="labelform" for="name">Email</label>
+                                <input class="form-control" id="email" placeholder="ejemplo@ejemplo.com" minlength="5" type="text" required name="email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="labelform" for="surname">Contraseña</label>
+                                <input type="password" class="form-control" id="password1" minlength="5" placeholder="password" required name="password">
+                            </div>
+                            <h6>Si olvido su contraseña recuperela haciendo <a href="recuperarpass.html">click aqui</a> </h6>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="checkloged" name="checkloged">
+                                    <label class="form-check-label" for="exampleCheck1">Mantener Logueado</label>
+                            </div>  
+                        </div>
+                      
+                    </div>
+                
+
+        </div>
+
+
+
+        <div class="cuadrobotonloguear">
+
+                <button class="btn btn-primary butnloguear"  id="buttonloginindex" >Iniciar sesion</button>
+                <a class="btn btn-danger butnloguear"   id="recuperarpass" href="recuperarpass.html" >Recuperar contraseña</a>
+
+        </div>
+    </form>
+    </div>
+    </div>
+</div>
+-->
+
+
+<div class="jumbotron container jumbotronmodificado animated fadeInUp slow media-custom">
+
+
+
+        <form>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="ejemplo@ejemplo.com" minlength="5"  required name="email">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="exampleInputPassword1">Contaseña</label>
+                  <input type="password" class="form-control" id="password1" minlength="5" placeholder="contraseña" required name="password">
+                </div>
+                
+            </div>
+
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="checkloged" name="checkloged">
+                  <label class="form-check-label" for="exampleCheck1">Mantener conectado</label>
+                </div>
+                <div class="form-group "> <h6>Si olvido su contraseña recuperela haciendo <a href="recuperarpass.html">click aqui</a> </h6></div>
+                <button  class="btn btn-primary butnloguear" id="buttonloginindex">Entrar !</button>
+              </form>
+
+
+
+</div>
+
+
+<div class="jumbotron container animated fadeInUp slow media-custom ">
+    <div class="col ">
+
+        <div class="row ">
+           <h4 class="paddingseparador">Si ud. es médico con autorización para ejercer, lo invitamos a inscribirse para poder utilizar la plataforma para realizar informes. Ésta inscripción es gratuita.</h4> 
+        </div>
+
+
+        <div class="row  botonesestiloindex cuadrobotonloguear"></div>
+            <div class="row">
+            <!-- <a href="registropersona.html" class="btn btn-primary butnloguear">Ir Registro Medico</a>
+             <a href="registroempresa.html" class="btn btn-primary butnloguear">Ir Registro Institucion</a>-->
+             <a href="registros.html" class="btn btn-primary butnloguear">Crear una cuenta </a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<div class="container animated fadeInUp slow jumbotron media-custom " id="contadores">
+    <div class="row">
+        <div class="col col-md-3 single-fact">
+            <h2 class="counter">5000</h2>
+            <p class="text-uppercase">Medicos Registrados</p>
+        </div>
+        <div class="col col-md-3 single-fact">
+            <h2 class="counter">5000</h2>
+            <p class="text-uppercase">Intituciones Registradas</p>
+        </div>
+        <div class="col col-md-3 single-fact">
+            <h2 class="counter">5000</h2>
+            <p class="text-uppercase">Estudios Disponibles</p>
+        </div>
+        <div class="col col-md-3 single-fact">
+            <h2 class="counter">5000</h2>
+            <p class="text-uppercase">Estudios Informados</p>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+</body>
+
+    <!--    JQUERY    -->
+    <script src="../assets/import/jquery/dist/jquery.min.js" ></script>
+
+    <!--    CAROUSEL    -->
+    <script src="../assets/import/OwlCarousel2-develop/dist/owl.carousel.min.js"></script>
+
+    <!--    VALIDATE    -->
+    <script src="../assets/import/formvalidator/dist/jquery.validate.min.js" ></script>
+
+    <!--    BOOTSTRAP    -->
+    <script src="../assets/import/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--    COUNTER     -->
+    <script src="../assets/import/waypoint/jquery.waypoints.min.js"></script>
+    <script src="../assets/import/counter/jquery.counterup.min.js"></script>
+
+    <!--    ELEMENTS    -->
+    <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/login.js"></script>
+
+    <script>
+
+            menu();
+
+             $.validator.messages.required = 'Este campo es obligatorio';
+ $.validator.messages.remote = 'El usuario se encuentra en uso';
+ $.validator.messages.email = 'Debe ingresar un E-mail valido';
+
+            var form = $( "#registoruser" );
+$( "#buttonloginindex" ).click(function() {
+  if(form.valid()){
+        login()
+  }
+});
+
+
+
+
+function getCookie(cookiesocialmedica) {
+
+    if(document.cookie){
+
+      
+    var name = cookiesocialmedica + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            var test=c.substring(name.length, c.length);
+            var values = JSON.parse(test);
+            login(values.email,values.password)
+        }
+    }
+    return "";
+
+    }
+}
+
+            
+
+            </script>
+
+</html>

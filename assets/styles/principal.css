@@ -1,0 +1,859 @@
+
+body{
+        /* overflow: auto; */
+        background-color: #f3f3f3;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 1.42857143;
+    color: #333;
+    /*background-color: #fff;*/
+}
+.botones{
+    background-color: lightblue;
+}
+
+.jumbotron{
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    margin-top: 2%;
+}
+
+.progress-bar {
+
+    background-color: #206ba0;
+}
+
+.registrousuario{
+    margin: auto;
+    display: block !important;
+    margin: auto !important;
+
+}
+
+.pgbar{
+    margin-top: 17%;
+    width: 100%;
+    background-color: #d9e3ec;
+}
+
+.stats{
+    text-align: center;
+    padding: 1% 1%;
+}
+
+.imageperfil{
+    display: block;
+    margin: auto;
+    /*height: 100%;*/
+  
+	/*height: 400px;*/
+    width: 400px;
+}
+
+.imageperfil1{
+    display: block;
+    margin: auto;
+    height: 100%;
+	width: 100%;
+
+}
+
+label.error{
+
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.error{
+    border-color: #dc3545;
+}
+
+.botoncontainer{
+    height: 20%;
+    margin-top: 5%;
+}
+
+.editbutton{
+    margin:auto;
+}
+
+.botonenviar{
+    display: block;
+    margin: auto;
+    margin-top: 2%;
+}
+
+
+/** nav**/
+
+.navbar{
+   /* background-color:rgba(255, 255, 255, 0.9) !important;*/
+    /*background: -webkit-linear-gradient(0deg, #017bff 0%, #36ad94 100%);*/
+    background-color: #216190!important;
+  }
+    
+      
+  .bontonappgen{
+    background-color: rgba(28, 32, 92, 0.9) !important;
+    border-color: rgba(28, 32, 92, 0.9) !important;
+  }
+  
+  .navbarapplication{
+    list-style-type: none;
+    /*color:#1C205C;*/
+  
+  }
+  /*
+  .navbarhoverapplication{
+  color: #428bca;
+  
+  }
+  
+  .navbar .navbar-toggler .icon-bar{
+    background-color: white !important;
+  }*/
+  
+  .logo{
+  
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+   
+   }
+  
+   .imgHeader{
+    width: 70%;
+    height: auto;
+    }
+  /*
+  body {
+  
+    background: url('../images/back.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100% 100%;
+  
+  
+  }*/
+  
+  
+  .img-visual{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  
+  }
+  
+  
+  .header{
+  
+  /*background-color:rgba(33,97,144,0.9);*/
+  padding-bottom: 3%;
+  padding-top: 3%;
+  
+  }
+  
+  
+.jumbotron{
+/*background-color: rgba(255, 255, 255, 0.75) !important;*/
+/*background-color: #007bff !important;*/
+
+}
+  
+  
+.navbar-toggler{
+position: absolute;
+right: 3%;
+top: 15%;
+}
+  
+.example{
+    border-width: thin !important;
+    border-color: black !important;
+}
+  
+.titulo{
+margin:auto;
+text-align: center;
+}
+  
+.divmenuitems{
+margin-bottom: 20px;   
+}
+    
+.separatemenuico{ 
+ margin-right: 50px;
+}
+    
+.listausuarios{
+    height: 150px;
+    width: auto;
+}
+
+.imglista{
+    height: 80%;
+    width: auto;
+}
+
+.buttonperfil{
+    margin: auto;
+    top: 50% !important;
+}
+
+.listausuarios1{
+    display: flex;
+    margin: auto;
+    height: 75%;
+}
+
+.masterdiv{
+    width: 100%;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: 1% !important;
+    margin-top: 1% !important;
+    margin-bottom: 0% !important;
+}
+
+.paginationlist{
+    margin: auto !important;
+    width: 20% !important;
+   /* margin-bottom: 3% !important;
+    margin-top: 40% !important;
+    position: fixed !important;*/
+    margin-top: 1% !important;
+}
+
+.divperfilempresa{
+
+height: 200px !important;
+width: auto;
+padding-top: 1% !important;
+padding: 1% !important;
+
+}
+
+.nombreempresa{
+    text-align: center;
+}
+
+.progressbar{
+    margin-top: 15%;
+}
+
+.botonestudio{
+    margin-top: 5px;
+    margin-right: 1%;
+    cursor: initial !important;
+
+}
+
+.pgbar {
+    margin-top: 2px;
+}
+
+.textsend{
+    margin-top: 2%;
+}
+
+.textget{
+    margin-top: 2%;
+}
+
+div.editable {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    
+}
+
+strong {
+  font-weight: bold;
+}
+
+.diveditable{
+    overflow-y: auto;
+    height: 200px;
+    padding-left: 2%;
+}
+
+.imagehome{
+    width: 100%;
+    height: auto;
+}
+
+.divnombrehome{
+    text-align: center;
+    /* display: flex; */
+    padding: 9%;
+}
+
+.divshomeestados{
+    display: grid;
+}
+
+.containerhomeestados{
+
+    text-align: center;
+
+}
+/*
+.test{
+    max-height: 300px !important;
+}*/
+/*
+.navbarapplication{
+    list-style-type: none;
+    color:#1C205C;
+  
+  }
+  
+  .navbarhoverapplication{
+  color: #428bca;
+  
+  }
+  
+  .navbar .navbar-toggler .icon-bar{
+    background-color: white !important;
+  }*/
+  
+  
+  @media (max-width: 768px) {
+    .hidde_column {
+      display: none;
+  
+      }
+  }
+
+  #listausuarios{
+    margin-right: 0px !important; 
+     margin-left: 0px !important; 
+     max-width: 100%;
+     min-width: 100%;
+  }
+
+  .logout{
+    color: #007bff !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+    -webkit-text-decoration-skip: objects !important;
+    cursor: pointer !important;
+  }
+
+  .labelpais{
+    text-align: -webkit-right;
+    max-height: 30px;
+    float: right;
+    clear: right;
+    margin-top: -3%;
+    margin-right: -2%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+  }
+
+  .listausers{
+    display: flex;
+    text-align: center;
+  }
+
+  .textolistauser{
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+
+  .botoneslistausers{
+      margin-right: 2%;
+      margin-top: 2%;
+  }
+  
+    .botoneslistausers1{
+      margin-right: 2%;
+      margin-top: 2%;
+	  width: 92px;
+  }
+
+  .jumbotronperfiles{
+      margin-right: 1%;
+  }
+  .minibuttons{
+      margin-right: 4%;
+  }
+
+  .separadores{
+      margin-right:2%;
+      float: none;
+    margin: 0 auto;
+  }
+
+  .buttonsolicitar{
+      display: block;
+      margin: auto;
+      margin-top: 2%;
+  }
+
+  .centertext{
+      text-align: center;
+      margin: auto;
+  }
+  
+  .imageperfillista{
+    /*height: 300px;
+    width: 300px;*/
+    margin:auto;
+    width: 100%;
+    height: 150px;
+    
+  }
+  
+  .uppercase{
+	      text-transform: uppercase;
+  }
+  
+  h5{
+	  margin-right:1%;
+  }
+  
+  .separado{
+      margin-right:2%;
+      margin-top: 3rem;
+      margin-left: 2rem;
+      margin-top: 75%;
+  }
+  
+#alerplaceholder{
+	    position: fixed;
+    width: -webkit-fill-available;
+    z-index: 99 !important;
+   
+}
+  
+  
+  /** ANIMATED **/
+
+  .progress1{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* margin: -20px 0 0 -50px; */
+    /* padding: 30px; */
+    overflow: auto;
+    padding-top: 12%;
+    padding-left: 47%;
+    top:0;
+    background-color: rgba(28, 32, 92, 0.3);
+    z-index: 100;
+    display: none;
+
+  }
+
+  .progressactive{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* margin: -20px 0 0 -50px; */
+    /* padding: 30px; */
+    overflow: auto;
+    padding-top: 12%;
+    padding-left: 47%;
+    top:0;
+    background-color: rgba(28, 32, 92, 0.3);
+    z-index: 100;
+
+  }
+
+  .progress1 span{
+    transition: all 500ms ease;
+    background: #4A72DA;
+    box-shadow: 1px 2px 3px #999;
+    height: 10px;
+    width: 10px;  
+    display: inline-block;
+    border-radius: 10px;
+    animation: wave 2s ease  infinite;
+  }  
+  
+  .progress1 span:nth-child(1){  animation-delay: 0; }
+  .progress1 span:nth-child(2){  animation-delay: 100ms; }
+  .progress1 span:nth-child(3){  animation-delay: 200ms; }
+  .progress1 span:nth-child(4){  animation-delay: 300ms; }
+  .progress1 span:nth-child(5){  animation-delay: 400ms; }
+  .progress1 span:nth-child(6){  animation-delay: 500ms; }
+  .progress1 span:nth-child(7){  animation-delay: 600ms; }
+  .progress1 span:nth-child(8){  animation-delay: 700ms; }
+  
+  @keyframes wave{
+    0%, 40%, 100% { 
+      transform: translate(0, 0);
+      background-color: #4A72DA;    
+    }
+    10% { 
+      transform: translate(0, -15px); 
+      background-color: red;    
+    }  
+  }
+
+.pagination.center,
+.pagination.center ul {
+    float: left;
+    position: relative;
+}
+.pagination.center { left: 50%; }
+.pagination.center ul { left: -50%; }
+
+.imagenperfilactual{
+    display: -webkit-box;
+    max-height: 100px;
+}
+
+.curriculum{
+    color: red;
+}
+
+.botonesestiloindex{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.butnloguear{
+    margin: auto;
+    width: 200px;
+    margin-bottom: 2px;
+    display: block;
+    margin: auto;
+    margin-top: 1%;
+}
+
+@media screen and (max-width: 900px){
+   /* .formbotonseparador{
+        margin-bottom: 70px !important;
+    }*/
+
+    .contenedorcompleto{
+        padding-right: 5px!important;
+        padding-left: 5px!important;
+    }
+
+    .paddingseparador{
+        margin: auto;
+        display: block;
+        margin-left: 7px;
+    }
+
+    /*.jumbotronmodificado{
+        display: block;
+    }*/
+
+    .butnloguear{
+        margin: auto;
+    display: block !important;
+   /* width: 50%;*/
+    margin-top: 3px;
+    margin-top: 1%;
+    }
+
+    .btn{
+        font-size: 13px !important;
+    }
+    .textotamañores{
+        font-size: 11px;
+    }
+    .row{
+        display: block !important;
+    }
+
+    .listausers{
+        display: block !important;
+    }
+
+}
+
+@media screen and (max-width: 760px){
+
+    .imageperfillista {
+        height: 150px;
+        width: auto;
+    }
+
+    .row{
+        display: block !important;
+        margin-right: 0px; 
+        margin-left: 0px;
+    }
+
+    .listausers{
+        display: block !important;
+    }
+
+    .editbutton{
+        display: block;
+        width: 100%;
+        margin-bottom: 1%;
+    }
+
+    .titulobarra{
+        margin-top: 0px !important;
+    }
+
+    .botonestudio{
+        margin-top: 1.5%;
+    }
+
+    .page-link {
+
+        padding: .1rem .3rem;
+    }
+
+    .botonescontacto{
+        display: block;
+        margin: auto;
+        width: 100%;
+        margin-top: 2%;
+    }
+
+ /*   .row1{
+        display: flex !important;
+    }*/
+
+    .cuadrobotonloguear{
+        
+    }
+
+}
+
+@media screen and (min-width: 760px){
+
+    .imageperfillista {
+        height: 150px;
+        width: auto;
+    }
+    .row{
+        display: flex !important;
+    }
+
+    .listausers{
+        display: flex !important;
+    }
+}
+
+@media screen and (min-width: 1200px){
+
+    .imageperfillista {
+        height: 277px;
+        width: 277px;
+
+    }
+
+}
+
+.labelform{
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.pagination.center,
+.pagination.center ul {
+    float: left;
+    position: relative;
+}
+.pagination.center { left: 50%; }
+.pagination.center ul { left: -50%; }
+
+.element-animate {
+    opacity: 0;
+    visibility: hidden;
+  }
+.texto{
+  position: relative;
+  /*margin-top: 60%;*/
+}
+
+.cuadromedico{
+    margin-right: 2%;
+    padding: 0%;
+}
+
+.contenedorbotones{
+    font-size: 12px !important;
+    margin-bottom: 5px;
+    position: initial;
+}
+
+.nav-link {
+color: white !important;
+}
+
+.buscadordoctores{
+    margin: auto;
+    margin-top: 2%;
+}
+
+.buttonbuscadores{
+    height: 100%;
+}
+
+.separadormargintop{
+    margin-top: 2%;
+}
+
+.labelloguin{
+    width: 100%;
+}
+
+.selectlargo{
+    width: 100% !important;
+    font-size: 1rem !important;
+    font-style: normal !important;
+    font-variant-ligatures: normal !important;
+    font-variant-caps: normal !important;
+    font-variant-numeric: normal !important;
+    font-variant-east-asian: normal !important;
+    font-weight: 400 !important;
+    font-stretch: normal !important;
+    font-family: Arial !important;
+
+}
+
+.imagenbandera{
+
+    height: 50px;
+    width: 50px;
+    text-align: -webkit-right;
+    max-height: 30px;
+    float: right;
+    clear: right;
+    margin-top: -3%;
+    margin-right: -2%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    
+
+}
+
+.textoregistro{
+    text-align: center;
+}
+
+.colregistroslinea{
+    border-right: 2px;
+    border-color: #419dff;
+    border-style: solid;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+.tituloregistro{
+    background: -moz-linear-gradient(0deg, #2380ff 0%, #52fdd9 100%);
+    background: -webkit-linear-gradient(0deg, #2380ff 0%, #52fdd9 100%);
+    background: -ms-linear-gradient(0deg, #2380ff 0%, #52fdd9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    line-height: 1.15em !important;
+    margin-bottom: 20px !important;
+    text-align: center;
+    font-style: oblique;
+    margin: auto;
+}
+
+.btn-outline-success:hover {
+    color: #256b9e;
+    background-color: rgba(233,236,239,0);
+    border-color: #256b9e;
+}
+
+.btn-outline-success {
+    color: #256b9e!important;
+    background-color: rgba(233,236,239,0)!important;
+    border-color: #256b9e!important;
+}
+
+
+.imagenchat{
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    max-width: 100px;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+.divimageneschat{
+    border-right: 2px;
+    border-color: #419dff;
+    border-style: solid;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+.row-mensaje{
+    margin-bottom: 1%;
+}
+
+.inboxtrue{
+    color:red!important;
+}
+
+.homebutton{
+    text-align: center;
+    margin-left: 10%;
+}
+
+body > nav > a > span{
+    margin: auto;
+    display: block;
+    margin-bottom: 15%;
+}
+
+
+body > div:nth-child(2) > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.owl-stage-outer > div > div.owl-item.active.center > div > p{
+    position: absolute;
+    top: 50%;
+
+}
+
+body > div:nth-child(2) > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.owl-stage-outer > div > div.owl-item.active.center > div > h2{
+    position: absolute;
+    top: 25%;
+}
+
+.listauser-perfil{
+    padding: 0px !important;
+}
+
+.navbar{
+    position: sticky !important;
+    z-index: 100 !important;
+    top: 0px !important;
+    width: 100% !important;
+}
+
+.btn-primary{
+    background-color: #256b9e!important;
+    border-color: #004c9c!important;
+}
+
+.visualizartrue{
+    display: block!important;
+}
+
+.visualizarfalse{
+    display: none !important;
+}
+
+.animatedgateway{
+    margin-top: 10%;
+}
