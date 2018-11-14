@@ -1,0 +1,10 @@
+
+/**  bootstrap  **/
+<link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+<script src="../assets/import/bootstrap/js/bootstrap.min.js"></script>
+
+/** jquery **/
+<script src="../assets/import/jquery/dist/jquery.min.js"></script>
+
+/**form validator**/
+ <script src="../assets/import/formvalidator/dist/jquery.validate.min.js"></script>
