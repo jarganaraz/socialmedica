@@ -135,7 +135,7 @@ function login(email,password){
                          }
                     
                 }else{    
-                    console.log("else");
+                    console.log("els");
                     document.getElementById("recuperarpass").style.display = "inherit";
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">message:Usuario o Contraseña Incorrecta</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, ); 
