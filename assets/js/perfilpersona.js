@@ -258,8 +258,8 @@ var textcurriculum = createdomele('h6');
 if(data.curriculum)
 textcurriculum.innerHTML= '<br>'+data.curriculum+'</br>';
 
-curriculum.appendChild(titlecurriculum);
-curriculum.appendChild(textcurriculum);
+//curriculum.appendChild(titlecurriculum);
+//curriculum.appendChild(textcurriculum);
 
 perfil.appendChild(titleperfil);
 perfil.appendChild(textperfil);
@@ -447,8 +447,8 @@ titlecurriculum.innerHTML = "Curriculum:";
 var textcurriculum = createdomele('h6');
 textcurriculum.innerHTML= '<br>'+data.curriculum+'</br>';
 
-curriculum.appendChild(titlecurriculum);
-curriculum.appendChild(textcurriculum);
+//curriculum.appendChild(titlecurriculum);
+//curriculum.appendChild(textcurriculum);
 
 perfil.appendChild(titleperfil);
 perfil.appendChild(textperfil);
@@ -589,8 +589,8 @@ var formadepago = createdomele('h5','class','textotamañores');
 formadepago.innerHTML = "Forma de Pago: ";
 var formadepagoapi = createdomele('h5','class','textotamañores');
 formadepagoapi.innerHTML = data.formadepago;
-divf.appendChild(formadepago);
-divf.appendChild(formadepagoapi);
+//divf.appendChild(formadepago);
+//divf.appendChild(formadepagoapi);
 
 
 var divt = createdomele('div','class','row');
@@ -773,8 +773,8 @@ var formadepago = createdomele('h5','class','textotamañores');
 formadepago.innerHTML = "Forma de Pago: ";
 var formadepagoapi = createdomele('h5','class','textotamañores');
 formadepagoapi.innerHTML = data.formadepago;
-divf.appendChild(formadepago);
-divf.appendChild(formadepagoapi);
+//divf.appendChild(formadepago);
+//divf.appendChild(formadepagoapi);
 
 
 var divt = createdomele('div','class','row');

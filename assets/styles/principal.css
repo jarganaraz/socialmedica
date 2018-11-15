@@ -1,9 +1,9 @@
 
 body{
         /* overflow: auto; */
-        background-color: #f3f3f3;
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 15px;
+    background-color: #f3f3f3;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
     line-height: 1.42857143;
     color: #333;
     /*background-color: #fff;*/
@@ -14,7 +14,7 @@ body{
 
 .jumbotron{
     background-color: rgba(255, 255, 255, 0.75) !important;
-    margin-top: 2%;
+    /*margin-top: 2%;*/
 }
 
 .progress-bar {
@@ -278,7 +278,7 @@ strong {
 .diveditable{
     overflow-y: auto;
     height: 200px;
-    padding-left: 2%;
+    padding-left: 1.4%;
 }
 
 .imagehome{
@@ -548,9 +548,10 @@ strong {
         margin-left: 7px;
     }
 
-    /*.jumbotronmodificado{
-        display: block;
-    }*/
+    .jumbotronmodificado{
+        padding: 1rem 0.5rem!important; 
+
+    }
 
     .butnloguear{
         margin: auto;
@@ -856,4 +857,31 @@ body > div:nth-child(2) > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.o
 
 .animatedgateway{
     margin-top: 10%;
+}
+
+.jumbotronmodificado{
+    padding: 1rem 0.5rem!important; 
+    width: 80%;
+    max-width: 900px;
+}
+
+.imgcarrusel{
+    max-height: 300px !important;
+}
+
+.imgfooter{
+    position: sticky !important;
+    z-index: 100 !important;
+    bottom: 0px !important;
+    width: 10% !important;
+    right: 0px;
+    float: right;
+}
+
+#launcher{
+    left: 0px!important;
+}
+
+.container1{
+    margin-top: 2%!important;
 }

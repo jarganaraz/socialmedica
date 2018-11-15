@@ -276,7 +276,6 @@ function render(data,respuesta,lista,container){
   
     var buttoncontactar = createdomele('button','class','btn btn-primary botoneslistausers btn-sm');
     buttoncontactar.innerHTML = "Contactar";
-
     buttoncontactar.setAttribute('href', 'contacto.html?id=' + data._id);
     buttoncontactar.addEventListener("click",contactar);
 
@@ -291,11 +290,12 @@ function render(data,respuesta,lista,container){
 
 
     divacciones.appendChild(buttonperfil);
+    divacciones.appendChild(buttoncontactar);
 
     if(JSON.parse(localStorage.getItem('identity')).role === "clinica")
     //divacciones.appendChild(buttoncontratar);
 
-    divacciones.appendChild(buttoncontactar);
+    
 
     if(data.curriculumfile){
         divacciones.appendChild(buttoncurriculum);

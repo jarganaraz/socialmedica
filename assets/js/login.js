@@ -128,7 +128,7 @@ function login(email,password){
 
                         }else{
                             console.log("si pero fallo")
-                            document.getElementById("recuperarpass").style.display = "inherit";
+                            
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">'+data.message+'</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, );
 
@@ -136,7 +136,7 @@ function login(email,password){
                     
                 }else{    
                     console.log("els");
-                    document.getElementById("recuperarpass").style.display = "inherit";
+                    
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">message:Usuario o Contraseña Incorrecta</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, ); 
 
@@ -145,7 +145,7 @@ function login(email,password){
             error: function(err){
                 console.log(err);
                 console.log("error1");
-                document.getElementById("recuperarpass").style.display = "inherit";
+                
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert"> '+err.responseJSON.message+'</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, );
 
@@ -230,7 +230,7 @@ function loginrecordado(email,password){
                         console.log("si pero fallo")
                     $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">'+data.message+'</div>')
                     setTimeout(function () { $('#alert').removeClass("show"); }, 20000, );
-                    document.getElementById("recuperarpass").style.display = "inherit";
+                    
 
                      }
                 
@@ -238,14 +238,14 @@ function loginrecordado(email,password){
                 console.log("else");
                     $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">message:Usuario o Contraseña Incorrecta</div>')
                     setTimeout(function () { $('#alert').removeClass("show"); }, 20000, ); 
-                    document.getElementById("recuperarpass").style.display = "inherit";
+                    
 
             }
         },
         error: function(err){
             console.log(err.responseJSON.message);
             console.log("error1112");
-            document.getElementById("recuperarpass").style.display = "inherit";
+            
             $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert"> '+err.responseJSON.message+'</div>')
             setTimeout(function () { $('#alert').removeClass("show"); }, 20000, );
            

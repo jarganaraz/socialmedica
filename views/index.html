@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="../assets/styles/animate.css">
     <link rel="stylesheet" href="../assets/styles/principal.css">
 
-
+<!-- Start of  Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5f5f1e68-99a1-47f6-913b-bebfbba4a5ce"> </script>
+<!-- End of  Zendesk Widget script -->
 
     <title>Social Medica</title>
 </head>
@@ -26,7 +28,7 @@
                 <a class="navbar-brand" href="#">
                         <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
 
-                        <span>.</span>
+                        <span>Social Medica</span>
             
                 <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -48,13 +50,11 @@
 
 
         <div class="owl-carousel owl-theme">
-                <div> 
-             <img src="../assets/images/banner.jpg" alt=""></div>
-            
-                <div> <img src="../assets/images/banner2.jpg" alt=""></div>
+                <div> <img class="imgcarrusel" src="../assets/images/banner.jpg" alt=""></div>
+                <div> <img class="imgcarrusel" src="../assets/images/banner2.jpg" alt=""></div>
         </div>
 
-    <div class="progress1 container1" id="loading" style="display:none">
+    <div class="progress1 " id="loading" style="display:none">
             <span></span>
             <span></span>
             <span></span>
@@ -126,7 +126,7 @@
 
 
 
-        <form>
+        <form class="registrousuario" id="registoruser">
 
             <div class="row">
                 <div class="form-group col-md-6">
@@ -134,7 +134,7 @@
                   <input type="email" class="form-control" id="email" placeholder="ejemplo@ejemplo.com" minlength="5"  required name="email">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="exampleInputPassword1">Contaseña</label>
+                  <label for="exampleInputPassword1">Contraseña</label>
                   <input type="password" class="form-control" id="password1" minlength="5" placeholder="contraseña" required name="password">
                 </div>
                 
@@ -153,11 +153,11 @@
 </div>
 
 
-<div class="jumbotron container animated fadeInUp slow media-custom ">
+<div class="jumbotron container animated fadeInUp slow media-custom jumbotronmodificado ">
     <div class="col ">
 
         <div class="row ">
-           <h4 class="paddingseparador">Si ud. es médico con autorización para ejercer, lo invitamos a inscribirse para poder utilizar la plataforma para realizar informes. Ésta inscripción es gratuita.</h4> 
+           <span class="paddingseparador">Si ud. es médico con autorización para ejercer, lo invitamos a inscribirse para poder utilizar la plataforma para realizar informes. Ésta inscripción es gratuita.</span> 
         </div>
 
 
@@ -175,7 +175,7 @@
 
 
 
-<div class="container animated fadeInUp slow jumbotron media-custom " id="contadores">
+<div class="container animated fadeInUp slow jumbotron media-custom jumbotronmodificado" id="contadores">
     <div class="row">
         <div class="col col-md-3 single-fact">
             <h2 class="counter">5000</h2>
@@ -197,6 +197,7 @@
 </div>
 
 
+<img class="imgfooter" src="../assets/images/logo1.png" alt="">
 
 </div>
 

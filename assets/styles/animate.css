@@ -1750,9 +1750,13 @@ i{
   right: 0px;
   background-color: rgba(212, 19, 13, 1);
   color: #fff !important;
-  border-radius: 50%;
-  padding: 2px 2px;
-  font: 8px Verdana;
+  border-radius: 9px;
+  /* padding: 2px 2px; */
+  font: 10px Verdana;
+  height: 14px;
+  width: 14px;
+  text-align: center;
+  margin: auto;
 }
 
 .notification-counter-deactivated {   

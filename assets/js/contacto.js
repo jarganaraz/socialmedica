@@ -74,27 +74,93 @@ function getdata(){
  
             data.forEach(element => {
 
-                i = i+1;           
+               // console.log(data[i-1].text+ "&#13;");
 
+                i = i+1;           
+                
+
+                if(data[i-1].emitter._id == identity._id ){
+                    
+               
                 var text = createdomele('h6');
                 text.innerHTML = data[i-1].text + "&#13;";
 
-                var nombre = createdomele('h6','style','font-weight:bold;')
+                var nombre = createdomele('h6','style','font-weight:bold;color:#216190')
                 nombre.innerHTML = data[i-1].emitter.name + ":";
 
                 var date = createdomele('h6','style','font-size: smaller;color: #999fa5;');
-                var dat = new Date();
-                dat = data[i-1].created_at;
+                var dat = new Date(data[i-1].created_at);
+                //dat = data[i-1].created_at;
 
-                date.innerHTML = data[i-1].created_at;
+                var day = dat.getDay();
+                var month = dat.getMonth();
+                var year = dat.getFullYear();
+                var hour = dat.getUTCHours();
+                var min=dat.getMinutes();
+
+                var msgtime = "  "+day+"/"+month+"/"+year+"  "+hour+":"+min;
+
+           
+
+                date.innerHTML = msgtime;
 
                 var row = createdomele('div','class','row');
+
+                if(i % 2 == 0){
+                    row.setAttribute('style','background-color:#f2f2f2')
+                    }else{
+                    row.setAttribute('style','background-color:#ffffff')
+                    }
+
                 row.appendChild(nombre);
                 row.appendChild(text);
                 row.appendChild(date);
 
 
                 document.getElementById('formenviados').appendChild(row);
+
+            }else{
+
+
+                var text = createdomele('h6');
+                text.innerHTML = data[i-1].text + "&#13;";
+
+                var nombre = createdomele('h6','style','font-weight:bold;color:#707171')
+                nombre.innerHTML = data[i-1].emitter.name + ":";
+
+                var date = createdomele('h6','style','font-size: smaller;color: #999fa5;');
+                var dat = new Date(data[i-1].created_at);
+                //dat = data[i-1].created_at;
+
+                var day = dat.getDay();
+                var month = dat.getMonth();
+                var year = dat.getFullYear();
+                var hour = dat.getUTCHours();
+                var min=dat.getMinutes();
+
+                var msgtime = "  "+day+"/"+month+"/"+year+"  "+hour+":"+min;
+
+          
+                date.innerHTML = msgtime;
+
+                var row = createdomele('div','class','row');
+
+                if(i % 2 == 0){
+                    
+                row.setAttribute('style','background-color:#f2f2f2')
+                }else{
+                row.setAttribute('style','background-color:#ffffff')
+                }
+
+                row.appendChild(nombre);
+                row.appendChild(text);
+                row.appendChild(date);
+
+
+                document.getElementById('formenviados').appendChild(row);
+
+                
+            }
 
                 
             });
