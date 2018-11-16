@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
     <link rel="stylesheet" href="../assets/styles/animate.css">
     <link rel="stylesheet" href="../assets/styles/principal.css">
+    <link rel="stylesheet" href="../assets/import/fontawesome5/css/all.min.css">
+    <link rel="stylesheet" href="../assets/import/iziModal/css/iziModal.min.css">
 
 <!-- Start of  Zendesk Widget script -->
 <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5f5f1e68-99a1-47f6-913b-bebfbba4a5ce"> </script>
@@ -196,6 +198,14 @@
 
 </div>
 
+
+<div id="modal" >
+     Modal content 
+</div>
+ 
+<!-- Trigger to open Modal -->
+<a href="https://github.com/dolce/iziModal" class="trigger">Modal</a>
+
 </body>
 
     <!--    JQUERY    -->
@@ -219,7 +229,23 @@
     <script src="../assets/js/navbar.js"></script>
     <script src="../assets/js/login.js"></script>
 
+    <!--    MODAL       -->
+    <script src="../assets/import/iziModal/js/iziModal.min.js"></script>
+
     <script>
+
+$("#modal").iziModal({
+    iframe: true,
+    iframeHeight: 800,
+    iframeURL: "./recuperarpass.html"
+});
+
+  $(document).on('click', '.trigger', function (event) {
+    event.preventDefault();
+    // $('#modal').iziModal('setZindex', 99999);
+    // $('#modal').iziModal('open', { zindex: 99999 });
+    $('#modal').iziModal('open');
+});
 
             menu();
 

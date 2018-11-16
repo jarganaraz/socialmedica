@@ -889,3 +889,7 @@ body > div:nth-child(2) > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.o
 #webWidget{
     left: 0px!important;
 }
+
+a > i{
+margin-right: 2px;
+}

@@ -8,43 +8,45 @@ function menu (){
 
 	if(!localStorage.getItem('identity')){
 		
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item homebutton' id='home'> <a class='nav-link' href='../'> Inicio</a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Noticias </a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Nosotros </a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Contactenos </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item homebutton' id='home'> <a class='nav-link' href='../'><i class='fas fa-home'></i> Inicio</a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > <i class='fas fa-home'></i> Noticias </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > <i class='fas fa-users'></i>Nosotros </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  ><i class='far fa-envelope'></i> Contactenos </a></li>");
 	
 	}else if(JSON.parse(localStorage.getItem('identity')).role == 'clinica'){
 
 		messagesbotoninbox();
 
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Noticias </a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Nosotros </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='home'> <a class='nav-link' href='gateway.html'> <i class='fas fa-exclamation animated flash infinite' style='color:red;'></i>Solicitar Instalacion GT</a></li>");
 
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='home'> <a class='nav-link' href='gateway.html'> Solicitar Instalacion GT</a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='perfil'> <a class='nav-link' href='perfil.html'> Perfil</a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='medicos'> <a class='nav-link' href='listausers.html'> Medicos  </a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='estudios'> <a class='nav-link logout' href='listamedicos.html'> Mis Medicos </a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='listaest'> <a class='nav-link' onclick='viewerdirect()'> Lista Estudios </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > <i class='fas fa-home'></i> Noticias </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > <i class='fas fa-users'></i>Nosotros </a></li>");
+
+
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='perfil'> <a class='nav-link' href='perfil.html'> <i class='fas fa-users-cog'></i> Perfil</a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='medicos'> <a class='nav-link' href='listausers.html'> <i class='fas fa-user-injured'></i>Medicos  </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='estudios'> <a class='nav-link logout' href='listamedicos.html'> <i class='fas fa-user-md'></i>Mis Medicos </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='listaest'> <a class='nav-link' onclick='viewerdirect()'> <i class='far fa-plus-square'></i>Lista Estudios </a></li>");
 		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Contactenos </a></li>");
 
-		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item notification-container' id='inbox'> <a class='nav-link' href='inbox.html'> <span class='notification-counter  visualizarfalse' id='globenotif'></span>Inbox </a></li>");
-		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout' onclick='logout()' > Cerrar Sesion </a></li>");
+		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item notification-container' id='inbox'>  <a class='nav-link' href='inbox.html'> <span class='notification-counter  visualizarfalse' id='globenotif'></span><i class='far fa-envelope'></i>Inbox </a></li>");
+		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout' onclick='logout()' ><i class='fas fa-power-off'></i> Cerrar Sesion </a></li>");
 
 	}else{
 
 		messagesbotoninbox();
 
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Noticias </a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Nosotros </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  ><i class='fas fa-home'></i> Noticias </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > <i class='fas fa-users'></i>Nosotros </a></li>");
 
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='perfil'> <a class='nav-link' href='perfil.html'> Perfil</a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='insti'> <a class='nav-link' href='listausers.html'> Instituciones </a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='estudios'> <a class='nav-link logout' onclick='viewerdirect()'> Mis Estudios </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='perfil'> <a class='nav-link' href='perfil.html'><i class='fas fa-users-cog'></i> Perfil</a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='insti'> <a class='nav-link' href='listausers.html'> <i class='fas fa-hospital'></i>Instituciones </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='estudios'> <a class='nav-link logout' onclick='viewerdirect()'> <i class='far fa-plus-square'></i> Mis Estudios </a></li>");
 		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout'  > Contactenos </a></li>");
 		
 
-		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item notification-container' id='inbox'> <a class='nav-link' href='inbox.html'> <span class='notification-counter  visualizarfalse' id='globenotif'></span>Inbox </a></li>");
-		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout' onclick='logout()' > Cerrar Sesion </a></li>");
+		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item notification-container' id='inbox'><a class='nav-link' href='inbox.html'> <span class='notification-counter  visualizarfalse' id='globenotif'></span><i class='far fa-envelope'></i>Inbox </a></li>");
+		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout' onclick='logout()' > <i class='fas fa-power-off'></i>  Cerrar Sesion </a></li>");
 	}
 
 
