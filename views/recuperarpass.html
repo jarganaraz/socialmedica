@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../assets/styles/animate.css">
     <link rel="stylesheet" href="../assets/styles/principal.css">
     <link rel="stylesheet" href="../assets/import/fontawesome5/css/all.min.css">
+    <link rel="stylesheet" href="../assets/import/iziModal/css/iziModal.min.css">
+    <link rel="stylesheet" href="../assets/import/iziToast/dist/css/iziToast.min.css">
 
 
 
@@ -45,7 +47,7 @@
 
         
 
-<div class="jumbotron container jumbotronmodificado animated fadeInUp slow media-custom ">
+<div class="jumbotron container jumbotronmodal animated fadeInUp slow media-custom ">
 
 <div class="row row1 contenedorcompleto">
 
@@ -61,28 +63,17 @@
                         <div class="form-group col-md-12">             
                             <label class="labelform" for="name">Email</label>
                             <input class="form-control" id="email" placeholder="ejemplo@ejemplo.com" minlength="5" type="text" required name="email">
-                        </div>
-                      
+                        </div>    
                     </div>
-                
-
         </div>
-
-
-
         <div class="cuadrobotonloguear">
 
                 <button class="btn btn-primary butnloguear"  id="buttonenviarmail" >Enviar Email</button>
-
         </div>
     </form>
     </div>
     </div>
 </div>
-
-
-
-
 
 
 
@@ -112,11 +103,16 @@
     <script src="../assets/js/login.js"></script>
     <script src="../assets/js/recuperarpass.js"></script>
 
+        <!--    MODAL       -->
+        <script src="../assets/import/iziModal/js/iziModal.min.js"></script>
+        <script src="../assets/import/iziToast/dist/js/iziToast.min.js"></script>
+
     <script>
 
-            menu();
 
-             $.validator.messages.required = 'Este campo es obligatorio';
+
+
+ $.validator.messages.required = 'Este campo es obligatorio';
  $.validator.messages.remote = 'El email registrado no corresponde a un correo en uso';
  $.validator.messages.email = 'Debe ingresar un E-mail valido';
 
@@ -145,12 +141,19 @@ $("#recuperarpassform").validate({
 
 
 
-            var form = $( "#recuperarpassform" );
+var form = $( "#recuperarpassform" );
 $( "#buttonenviarmail" ).click(function() {
   if(form.valid()){
-       // login()
+
        enviarmailrecuperacion();
        console.log("enviado");
+
+      
+      
+
+       
+
+      
   }
 });
 

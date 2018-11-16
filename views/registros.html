@@ -13,9 +13,7 @@
         <link rel="stylesheet" href="../assets/styles/animate.css">
         <link rel="stylesheet" href="../assets/styles/principal.css">
         <link rel="stylesheet" href="../assets/import/fontawesome5/css/all.min.css">
-        <!-- Start of  Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5f5f1e68-99a1-47f6-913b-bebfbba4a5ce"> </script>
-<!-- End of  Zendesk Widget script -->
+
 
 
     <title>Registro - Social Medica -</title>
@@ -25,11 +23,11 @@
     
 
 
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+       <!-- <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
                 <a class="navbar-brand" href="#">
-                        <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
-                        <span>Social Medica</span>
-                <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>
+                        <span>Social Medica</span>-->
+                <!--<button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 </a>
@@ -39,7 +37,7 @@
                     <ul class=" navbar-right navbar-nav ml-auto" id="navbarright">
                     </ul>
                 </div>
-              </nav>
+              </nav>-->
 
             <!--  <div class="container jumbotron animated fadeIn slow">
                  
@@ -54,10 +52,11 @@
 
 
 
-              <div class="container jumbotron animated fadeIn slow">
+              <div class="container jumbotron jumbotronmodal1 animated fadeIn slow">
                   
                 <div class="row">
-                        <div class="col col-md-6 colregistroslinea">
+                        <div><h5><b><u>Crear cuenta Medico informante</u></b> </h5></div>
+                        <div class="col ">
 
                             <div class="row textoregistro ">
                                 <h5>Cree una cuenta con sus datos Profesionales y ofrezca servicios de Teleradiología de la forma más rápida y rentable</h5>
@@ -65,13 +64,20 @@
 
                             <div class="row">
 
-                                <a href="registropersona.html" class="btn btn-primary botonenviar" > Crear una cuenta</a>
+                                <a href="registropersona.html" class="btn btn-primary botonenviar trigmodalcreate" id="registroopener"> Crear una cuenta</a>
 
                             </div>
 
                         </div>
+                </div>
+              </div>
 
-                        <div class="col col-md-6">
+
+
+               <div class="container jumbotron jumbotronmodal1 animated fadeIn slow">
+                <div class="row">
+                    <div><h5><b><u>Crear cuenta Clinica</u></b></h5></div>
+                        <div class="col ">
 
                                 <div class="row textoregistro">
                                     <h5>Cree una cuenta con los datos de su Hospital o Clinica y acceda a servicios de Teleradiología con especialistas altamente calificados</h5>
@@ -90,7 +96,9 @@
 
 
 
-
+              <div id="registrosmodal" >
+ 
+                </div>
 
 
 
@@ -117,7 +125,14 @@
     <script src="../assets/js/login.js"></script>
 
     <script>
-    menu();
+    
+    $("#registroopener").click(function(){
+    registroopener();
+        })
+
+
+
+
     </script>
 
 

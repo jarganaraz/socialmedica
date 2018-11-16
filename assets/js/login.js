@@ -261,13 +261,31 @@ function loginrecordado(email,password){
     
     });
 
-
-
-
-
-
-
-
-
 }
+
+function registroopener(){
+
+    
+    $('#modal').iziModal('destroy');
+       $("#modal").iziModal({
+           iframe: true,
+           closeButton :true,
+           iframeHeight: window.outerHeight*0.8,
+          iframeURL: "./registros.html"
+       });
+   
+       $(document).on('click', '.trigmodalcreate', function (event) {
+           event.preventDefault();
+           $('#modal').iziModal('open');
+       });
+       
+   
+   
+   }
+  
+  
+  
+  
+  
+  
 

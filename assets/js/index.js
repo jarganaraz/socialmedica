@@ -1,5 +1,6 @@
 
-
+if(localStorage.getItem("identity") && localStorage.getItem("identity") !="null")
+window.location = "perfil.html"
 
 $('.owl-carousel').owlCarousel({
     animateOut: 'slideOutDown',
@@ -30,3 +31,75 @@ var waypoint = new Waypoint({
     },
     offset: '75%'
   })
+
+  function getCookie(cookiesocialmedica) {
+
+
+    if(document.cookie){
+    var name = cookiesocialmedica + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            var test=c.substring(name.length, c.length);
+            var values = JSON.parse(test);
+            login(values.email,values.password)
+        }
+    }
+    return "";
+
+    }
+}
+
+
+
+function closemodal(){
+    console.log("close modal");
+    $("#modal").iziModal('close');
+}
+
+function modalopener(){
+ $('#modal').iziModal('destroy');
+
+$("#modal").iziModal({
+    iframe: true,
+    closeButton :true,
+    //iframeHeight: 800,
+   iframeURL: "./recuperarpass.html"
+});
+
+  $(document).on('click', '.trigger', function (event) {
+    event.preventDefault();
+    // $('#modal').iziModal('setZindex', 99999);
+    // $('#modal').iziModal('open', { zindex: 99999 });
+    $('#modal').iziModal('open');
+});
+
+}
+
+
+
+
+function registroopener(){
+
+    
+ $('#modal').iziModal('destroy');
+    $("#modal").iziModal({
+        iframe: true,
+        closeButton :true,
+        iframeHeight: window.outerHeight*0.8,
+       iframeURL: "./registros.html"
+    });
+
+    $(document).on('click', '.trigmodalcreate', function (event) {
+        event.preventDefault();
+        $('#modal').iziModal('open');
+    });
+    
+
+
+}

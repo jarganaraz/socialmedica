@@ -26,6 +26,8 @@ function validar(){
 }
 
 function registrar(){
+
+    inittoast();
 	var valida = 0;
     
     $("body").off("submit", "form");
@@ -56,17 +58,20 @@ function registrar(){
             success: function (data) {
 
                 if (data ) {
+                    destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');
                         
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">'+data.message+'</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 3000, );
                     
                 }else{
+                    destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                         
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">'+data.message+'</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 3000, ); 
                 }
             },
             error: function(err){
+                destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                 
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">Ocurrio un problema</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 3000, );
@@ -74,7 +79,7 @@ function registrar(){
             complete : function(){
                 
                 if (valida == 1){
-                window.location = "index.html";    
+                    setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, ); 
                 }
                 valida=valida+1;
                 
@@ -93,25 +98,28 @@ function registrar(){
             success: function (data) {
 
                 if (data ) {
+                    destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');
                         
-                        $('#alerplaceholder').html('<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">'+data.message+'</div>')
-                        setTimeout(function () { $('#alert').removeClass("show");}, 0, );
+                        /*$('#alerplaceholder').html('<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">'+data.message+'</div>')
+                        setTimeout(function () { $('#alert').removeClass("show");}, 0, );*/
                     
                 }else{
+                    destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                         
-                        $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert"></div>')
-                        setTimeout(function () { $('#alert').removeClass("show"); }, 0, ); 
+                       /* $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert"></div>')
+                        setTimeout(function () { $('#alert').removeClass("show"); }, 0, ); */
                 }
             },
             error: function(err){
-                console.log(err)
+                destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
+                /*console.log(err)
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">Ocurrio un problema</div>')
-                        setTimeout(function () { $('#alert').removeClass("show"); }, 0, );
+                        setTimeout(function () { $('#alert').removeClass("show"); }, 0, );*/
             },
             complete : function(){
                 
                 if (valida == 1){
-                window.location = "index.html";    
+                    setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, );   
                 }
                 valida=valida+1;
                 
@@ -127,3 +135,26 @@ function registrar(){
 
 
 
+function inittoast(){       
+    iziToast.show({
+    title: '<i class="fas fa-spinner fa-pulse" style="color:green"></i> Enviando correo de Recuperacion',
+    //message: ' <i class="fas fa-spinner fa-pulse"></i> What would you like to add?',
+    position:'center',
+    timeout: false,
+    progressBar:false,
+    close:false
+
+});
+}
+
+
+function destroytoast(msg){
+    iziToast.destroy();
+
+iziToast.show({
+    title:msg,
+    position:'center',
+    close:true
+});
+
+}

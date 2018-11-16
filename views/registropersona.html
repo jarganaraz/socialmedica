@@ -12,20 +12,22 @@
     <link rel="stylesheet" href="../assets/styles/animate.css">
     <link rel="stylesheet" href="../assets/import/jquery-nice-select-1.1.0/css/nice-select.css">
     <link rel="stylesheet" href="../assets/import/fontawesome5/css/all.min.css">
-    <!-- Start of  Zendesk Widget script -->
+    <link rel="stylesheet" href="../assets/import/iziModal/css/iziModal.min.css">
+    <link rel="stylesheet" href="../assets/import/iziToast/dist/css/iziToast.min.css">
+    <!-- Start of  Zendesk Widget script 
 <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5f5f1e68-99a1-47f6-913b-bebfbba4a5ce"> </script>
-<!-- End of  Zendesk Widget script -->
+ End of  Zendesk Widget script -->
 
 
 
     <title>Social Medica - Registro</title>
 </head>
 <body>
-        <div id="alerplaceholder"></div>
+       <!-- <div id="alerplaceholder"></div>-->
 
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+      <!--  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
                         <a class="navbar-brand" href="#">
-                                <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
+                                <a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>
                                 <span>Social Medica</span>
                         <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
@@ -37,9 +39,9 @@
                             <ul class=" navbar-right navbar-nav ml-auto" id="navbarright">
                             </ul>
                         </div>
-                      </nav>
+                      </nav>-->
 
-    <div class="jumbotron container animated fadeIn slow">
+    <div class="jumbotron jumbotronmodal container animated fadeIn slow">
 
         <h2>
                 Registro Medico
@@ -49,43 +51,43 @@
                     <div class="form-row ">
                             <div class="form-group col-md-6">
                               <label for="name">Nombre</label>
-                              <input  class="form-control uppercase" id="name" placeholder="Nombre" minlength="3" type="text" required name="name" required>
+                              <input  class="form-control form-control1 uppercase" id="name" placeholder="Nombre" minlength="3" type="text" required name="name" required>
                             </div>
                             <div class="form-group col-md-6">
                               <label for="surname">Apellido</label>
-                              <input  type="text" class="form-control uppercase" id="surname" minlength="3" placeholder="Apellido" required name="surname" required>
+                              <input  type="text" class="form-control form-control1 uppercase" id="surname" minlength="3" placeholder="Apellido" required name="surname" required>
                             </div>
                     </div>
                      <div class="form-row">
                             <div class="form-group col-md-6">
                                   <label for="pais">Pais</label>
-                                  <select class="form-control selectlargo" id="pais1" name="pais" required>
+                                  <select class="form-control form-control1 selectlargo" id="pais1" name="pais" required>
                                       </select>    
                             </div>
                             <div class="form-group col-md-6">
                                  <label for="telefono">Telefono</label>
-                                 <input  type="text" class="form-control uppercase" id="telefono" placeholder="telefono"  name="telefono" required data-rule-number=”true” number>
+                                 <input  type="text" class="form-control form-control1 uppercase" id="telefono" placeholder="telefono"  name="telefono" required data-rule-number=”true” number>
                              </div>
                     </div>
                     <div  class="form-row">
                             <div class="form-group col-md-6">
                                     <label for="email">E-Mail</label>
-                                    <input  type="email" class="form-control" id="email" placeholder="E-MAIL" minlength="5"  name="email" email="true" required>
+                                    <input  type="email" class="form-control form-control1" id="email" placeholder="E-MAIL" minlength="5"  name="email" email="true" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                         <label for="password">Nombre Informante</label>
-                                        <input  type="text" class="form-control" id="ninformante" placeholder="NAPELLIDO" minlength="4" name="ninformante"required>
+                                        <input  type="text" class="form-control form-control1" id="ninformante" placeholder="NAPELLIDO" minlength="4" name="ninformante"required>
                                 </div>
                     </div>
 
                     <div  class="form-row">
                                 <div class="form-group col-md-6">
                                         <label for="password">Password</label>
-                                        <input  type="password" class="form-control" id="password" placeholder="PASSWORD" minlength="5" name="password" required>
+                                        <input  type="password" class="form-control form-control1" id="password" placeholder="PASSWORD" minlength="5" name="password" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                         <label for="password">Repetir Password</label>
-                                        <input  type="password" class="form-control" id="repassword" placeholder="PASSWORD" minlength="5" name="repassword" required>
+                                        <input  type="password" class="form-control form-control1" id="repassword" placeholder="PASSWORD" minlength="5" name="repassword" required>
                                 </div>
                 </div>
 
@@ -105,10 +107,12 @@
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/import/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
 
+        <!--    MODAL       -->
+        <script src="../assets/import/iziModal/js/iziModal.min.js"></script>
+        <script src="../assets/import/iziToast/dist/js/iziToast.min.js"></script>
+
 
 <script >
-
-        menu();
 
  flags('pais1');
 

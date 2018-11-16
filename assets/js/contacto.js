@@ -216,7 +216,7 @@ function enviarmensaje(){
 
 	function salir(){
 	 console.log("salir");
-	window.location = "listausers.html";
+	window.location = "inbox.html";
 	}
 
 
