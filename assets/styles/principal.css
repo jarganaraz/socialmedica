@@ -870,7 +870,7 @@ body > div:nth-child(2) > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.o
 }
 
 .imgfooter{
-    position: sticky !important;
+    position: fixed !important;
     z-index: 100 !important;
     bottom: 0px !important;
     width: 10% !important;
@@ -884,4 +884,8 @@ body > div:nth-child(2) > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.o
 
 .container1{
     margin-top: 2%!important;
+}
+
+#webWidget{
+    left: 0px!important;
 }

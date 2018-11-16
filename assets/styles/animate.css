@@ -1736,13 +1736,13 @@
 
 .notification-container {
   position: relative;
-  
+}
 i{
   color: #fff;
 }
       
 
-}
+
 
 .notification-counter {   
   position: absolute;
