@@ -78,7 +78,7 @@ function getdata(){
 
                 i = i+1;           
                 
-
+ console.log(data[i-1].created_at)
                 if(data[i-1].emitter._id == identity._id ){
                     
                
@@ -92,8 +92,10 @@ function getdata(){
                 var dat = new Date(data[i-1].created_at);
                 //dat = data[i-1].created_at;
 
-                var day = dat.getDay();
-                var month = dat.getMonth();
+               
+               
+                var day = dat.getDate();
+                var month = dat.getMonth()+1;
                 var year = dat.getFullYear();
                 var hour = dat.getUTCHours();
                 var min=dat.getMinutes();
@@ -132,8 +134,8 @@ function getdata(){
                 var dat = new Date(data[i-1].created_at);
                 //dat = data[i-1].created_at;
 
-                var day = dat.getDay();
-                var month = dat.getMonth();
+                var day = dat.getDate();
+                var month = dat.getMonth()+1;
                 var year = dat.getFullYear();
                 var hour = dat.getUTCHours();
                 var min=dat.getMinutes();

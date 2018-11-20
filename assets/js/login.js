@@ -100,7 +100,7 @@ function login(email,password){
                                       localStorage.setItem("identity",JSON.stringify(data));
 		
 							
-                                     if(data.primera == 1  && data.role == 'clinica'){
+                                     /*if(data.primera == 1  && data.role == 'clinica'){
              
                                         $.ajax({
                                             type:'GET',
@@ -116,10 +116,10 @@ function login(email,password){
 
                                         });
                                    
-                                    }else{
+                                    }else{*/
 
                                         window.location.href = "perfil.html";
-                                    }
+                                    //}//
 
                                       
                                   }
@@ -167,8 +167,6 @@ function login(email,password){
 }
 
 function loginrecordado(email,password){
-
-
 
 
     $.ajax({

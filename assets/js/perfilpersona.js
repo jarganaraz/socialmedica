@@ -19,6 +19,45 @@ var imageuserapi = protocolo + "//192.168.2.236:3800/api/get-image-user/";
 var adddelmedicoapi = protocolo + "//192.168.2.236:3800/api/adddelmedico";
 
 var primera;
+var identity = JSON.parse(localStorage.getItem("identity"));
+
+
+function gatewayOpener(){
+if(identity && identity != "null" && identity.role == "clinica" && identity.primera == 1){
+
+    console.log("TEST")
+
+
+    
+
+     $('#modal').iziModal('destroy');
+    
+    $("#modal").iziModal({
+        iframe: true,
+        closeButton :true,
+        title: "Gateway - Social Medica",
+        //iframeHeight: 800,
+       iframeURL: "./gateway.html"
+    });
+    
+     
+       // event.preventDefault();
+        $('#modal').iziModal('open');
+   
+    
+
+
+    identity.primera = 0;
+
+    localStorage.setItem("identity",JSON.stringify(identity));
+
+
+}
+
+}
+
+
+
 
 function validar(){
 
