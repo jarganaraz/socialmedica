@@ -1,0 +1,15 @@
+$('.owl-carousel').owlCarousel({
+    //animateOut: 'slideOutDown',
+    //animateIn: 'flipInX',
+    items:1,
+    pagination:true,
+    center:true,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoWidth:true,
+    //autoplayHoverPause:true,
+    nav:false,
+    dots:false,
+    navigation : true, 
+});

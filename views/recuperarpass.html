@@ -20,7 +20,7 @@
 
 
 
-    <title>Social Medica</title>
+    <title>Social Médica </title>
 </head>
 <body >
 
@@ -54,7 +54,7 @@
         
     <div class="col">
         <div class="row">
-                <h4>Ingrese su correo para recibir un email con los pasos para cambia su contraseña</h4>
+                <h4>Ingrese su correo para recibir un email con los pasos para cambiar su contraseña</h4>
         </div>
     <form class="registrousuario" id="recuperarpassform"> 
         <div class="row formbotonseparador">
@@ -124,7 +124,7 @@ $("#recuperarpassform").validate({
                         required: true,
                         email:true,
                         remote:{
-                                url:"http://192.168.2.236:3800/api/checkmail",
+                                url:window.location.origin+":3800/api/checkmail",
                                 type:"post",
                                 data:{
                                     

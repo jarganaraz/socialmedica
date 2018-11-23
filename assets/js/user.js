@@ -10,6 +10,8 @@ var MedicoxInsti = require('../models/medicoxinstitucion');
 var Publication = require('../models/publication');
 var jwt = require('../services/jwt');
 
+var linkapi = "https://socialmedica.visualmedica.com"
+
 var nodemailer = require('nodemailer');
 
 // Métodos de prueba
@@ -88,7 +90,7 @@ function saveUser(req, res){
 								from: 'Jarganaraz@visualmedica.com',
 								to: user.email,
 								subject: 'Registro',
-								text: 'Para activar su cuenta por favor ingrese al siguiente link http://localhost:3800/api/activate-user/'+userStored._id+''
+								text: 'Para activar su cuenta por favor ingrese al siguiente link'+linkapi+':3800/api/activate-user/'+userStored._id+''
 							 };
 							 
 															// verify connection configuration
@@ -561,7 +563,7 @@ function activateAcc(req, res){
 					res.status(404).send({message: 'No se ha podido actualizar el estado'});
 				}else{
 					//res.status(200).send({activo: true, user: userUpdated});
-					res.redirect('http:localhost/socialmedica2.0/views/login.html');
+					res.redirect(linkapi+'/socialmedica2.0/views/login.html');
 				}
 
 		 });

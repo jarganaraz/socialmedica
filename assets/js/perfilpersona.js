@@ -1,22 +1,22 @@
 
 
 var protocolo = location.protocol;
-var path= protocolo + "192.168.2.236/socialmedica2.0/";
+var path= window.location.origin +"/socialmedica2.0/";
 //var path = protocolo + "//"+path;
-var users = protocolo + "//192.168.2.236:3800/api/users/";
-var apilogin = protocolo + "//192.168.2.236:3800/api/login";
-var apiperfil = protocolo + "//192.168.2.236:3800/api/userdata";
-var apicurriculum = protocolo + "//192.168.2.236:3800/api/get-curriculum-user/";
-var messagesend = protocolo + "//192.168.2.236:3800/api/message/";
-var uploadcurriculum = protocolo + "//192.168.2.236:3800/api/upload-curriculum-user/";
-var uploadimageuser = protocolo + "//192.168.2.236:3800/api/upload-image-user/";
-var updateuser = protocolo + "//192.168.2.236:3800/api/update-user/";
-var imageuser = protocolo + "//192.168.2.236:3800/api/get-image-user/";
-var messages = protocolo + "//192.168.2.236:3800/api/messagesperuser";
-var apiuser = protocolo + "//192.168.2.236:3800/api/register";
-var datosuser = protocolo + "//192.168.2.236:3800/api/user/";
-var imageuserapi = protocolo + "//192.168.2.236:3800/api/get-image-user/";
-var adddelmedicoapi = protocolo + "//192.168.2.236:3800/api/adddelmedico";
+var users = window.location.origin +":3800/api/users/";
+var apilogin = window.location.origin +":3800/api/login";
+var apiperfil = window.location.origin +":3800/api/userdata";
+var apicurriculum = window.location.origin +":3800/api/get-curriculum-user/";
+var messagesend = window.location.origin +":3800/api/message/";
+var uploadcurriculum = window.location.origin +":3800/api/upload-curriculum-user/";
+var uploadimageuser = window.location.origin +":3800/api/upload-image-user/";
+var updateuser = window.location.origin +":3800/api/update-user/";
+var imageuser = window.location.origin +":3800/api/get-image-user/";
+var messages = window.location.origin +":3800/api/messagesperuser";
+var apiuser = window.location.origin +":3800/api/register";
+var datosuser = window.location.origin +":3800/api/user/";
+var imageuserapi = window.location.origin +":3800/api/get-image-user/";
+var adddelmedicoapi = window.location.origin +":3800/api/adddelmedico";
 
 var primera;
 var identity = JSON.parse(localStorage.getItem("identity"));
@@ -616,7 +616,7 @@ var perfil = createdomele('div','class','col');
 
 var divn = createdomele('div','class','row');
 var nombre = createdomele('h5','class','textotamañores');
-nombre.innerHTML = "Nombre de la Clinica: "
+nombre.innerHTML = "Nombre de la Clínica: "
 var nombreapi = createdomele('h5','class','textotamañores');
 nombreapi.innerHTML = data.name;
 divn.appendChild(nombre);
@@ -643,7 +643,7 @@ divt.appendChild(tporespuestaapi);
 
 var divd = createdomele('div','class','row');
 var domicilio = createdomele('h5','class','textotamañores');
-domicilio.innerHTML="Domicilio de la institucion: ";
+domicilio.innerHTML="Domicilio de la institución: ";
 var domicilioapi = createdomele('h5','class','textotamañores');
 domicilioapi.innerHTML = data.domicilio;
 divd.appendChild(domicilio);
@@ -800,7 +800,7 @@ var perfil = createdomele('div','class','col');
 
 var divn = createdomele('div','class','row');
 var nombre = createdomele('h5','class','textotamañores');
-nombre.innerHTML = "Nombre de la Clinica: "
+nombre.innerHTML = "Nombre de la Clínica: "
 var nombreapi = createdomele('h5','class','textotamañores');
 nombreapi.innerHTML = data.name;
 divn.appendChild(nombre);
@@ -827,7 +827,7 @@ divt.appendChild(tporespuestaapi);
 
 var divd = createdomele('div','class','row');
 var domicilio = createdomele('h5','class','textotamañores');
-domicilio.innerHTML="Domicilio de la institucion: ";
+domicilio.innerHTML="Domicilio de la institución: ";
 var domicilioapi = createdomele('h5','class','textotamañores');
 domicilioapi.innerHTML = data.domicilio;
 divd.appendChild(domicilio);
@@ -974,14 +974,17 @@ function vercurriculum1 () {
         dataType: 'json',
         success: function (data2) {
 
+            console.log(data2);
+
+            console.log(data2.type);
+            console.log(primera)
+
             if (data2.type == 1){
                 if(primera){
                     document.getElementById('adddelbutton').setAttribute('class','editbutton btn btn-success');
                     document.getElementById('adddelbutton').innerHTML = 'Contratar';
                 }else{
                     respuesta = {atribute : "danger", html : "Eliminar"};
-                 
-                  
                     primera = 1;
                     renderperfilexterno(data,respuesta);
 
@@ -991,7 +994,7 @@ function vercurriculum1 () {
                     document.getElementById('adddelbutton').setAttribute('class','editbutton btn btn-danger');
                     document.getElementById('adddelbutton').innerHTML = 'Eliminar';
                 }else{
-                    respuesta = {atribute : "success", html : "Agregar"};
+                    respuesta = {atribute : "success", html : "Contratar"};
                 
                     primera = 1;
                     renderperfilexterno(data,respuesta);

@@ -1,21 +1,21 @@
 
 var protocolo = location.protocol;
-var path= protocolo + "192.168.2.236/socialmedica2.0/";
+var path= window.location.origin +"/socialmedica2.0/";
 //var path = protocolo + "//"+path;
-var users = protocolo + "//192.168.2.236:3800/api/users/";
-var apilogin = protocolo + "//192.168.2.236:3800/api/login";
-var apiperfil = protocolo + "//192.168.2.236:3800/api/userdata";
-var apicurriculum = protocolo + "//192.168.2.236:3800/api/get-curriculum-user/";
-var messagesend = protocolo + "//192.168.2.236:3800/api/message/";
-var uploadcurriculum = protocolo + "//192.168.2.236:3800/api/upload-curriculum-user/";
-var uploadimageuser = protocolo + "//192.168.2.236:3800/api/upload-image-user/";
-var updateuser = protocolo + "//192.168.2.236:3800/api/update-user/";
-var imageuser = protocolo + "//192.168.2.236:3800/api/get-image-user/";
-var messages = protocolo + "//192.168.2.236:3800/api/messagesperuser";
-var apiuser = protocolo + "//192.168.2.236:3800/api/register";
-var datosuser = protocolo + "//192.168.2.236:3800/api/user/";
-var imageuserapi = protocolo + "//192.168.2.236:3800/api/get-image-user/";
-var adddelmedicoapi = protocolo + "//192.168.2.236:3800/api/adddelmedico";
+var users = window.location.origin +":3800/api/users/";
+var apilogin = window.location.origin +":3800/api/login";
+var apiperfil = window.location.origin +":3800/api/userdata";
+var apicurriculum = window.location.origin +":3800/api/get-curriculum-user/";
+var messagesend = window.location.origin +":3800/api/message/";
+var uploadcurriculum = window.location.origin +":3800/api/upload-curriculum-user/";
+var uploadimageuser = window.location.origin +":3800/api/upload-image-user/";
+var updateuser = window.location.origin +":3800/api/update-user/";
+var imageuser = window.location.origin +":3800/api/get-image-user/";
+var messages = window.location.origin +":3800/api/messagesperuser";
+var apiuser = window.location.origin +":3800/api/register";
+var datosuser = window.location.origin +":3800/api/user/";
+var imageuserapi = window.location.origin +":3800/api/get-image-user/";
+var adddelmedicoapi = window.location.origin +":3800/api/adddelmedico";
 
 function loadconfig(){
 
@@ -60,15 +60,15 @@ function llenarcampos () {
                     if(study){
                     if(study.mr)
                     document.getElementById('mr').setAttribute('checked',"true");
-                        if(study.rx)
+                    if(study.rx)
                     document.getElementById('rx').setAttribute('checked',"true");
-                        if(study.mg)
+                    if(study.mg)
                     document.getElementById('mg').setAttribute('checked',"true");
-                        if(study.cr)
+                    if(study.cr)
                     document.getElementById('cr').setAttribute('checked',"true");
-                        if(study.ct)
+                    if(study.ct)
                     document.getElementById('ct').setAttribute('checked',"true");
-                        if(study.dx)
+                    if(study.dx)
                     document.getElementById('dx').setAttribute('checked',"true");
                     if(study.es)
                     document.getElementById('es').setAttribute('checked',"true");
@@ -236,7 +236,7 @@ var studytipe = JSON.stringify({
             surname : formjson.apellido,
             perfil: formjson.descripcion,
             telefono: formjson.telefono,
-            curriculum: formjson.curriculum,
+            //curriculum: formjson.curriculum,
             pais:formjson.pais,
             studytipe: studytipe
          },

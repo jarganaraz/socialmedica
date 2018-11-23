@@ -24,25 +24,27 @@
 <!-- End of  Zendesk Widget script -->
 
 
-    <title>Social Medica - Lista Medicos - </title>
+    <title>Social Médica  - Lista Medicos - </title>
 </head>
 <body onload="getconfig()">
 
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
-        <a class="navbar-brand" href="#">
-                <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
-                <span>Social Medica</span>
-        <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        </a>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class=" navbar-left navbar-nav ml-auto" id="navbarleft">
-            </ul>
-            <ul class=" navbar-right navbar-nav ml-auto" id="navbarright">
-            </ul>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+                <a href="http://www.visualmedica.com" class="amenu"><img src="../assets/images/logo.png" class="imgHeader" ></a>
+                <a>
+                   
+                </a>
+                <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class=" navbar-left navbar-nav " id="navbarleft">
+                    </ul>
+                    <ul class=" navbar-right navbar-nav ml-auto" id="navbarright">
+                    </ul>
+                </div>
+              </nav>
+
 
 
             <!--  <div class="container ">
@@ -82,6 +84,9 @@
 
 
 <script>
+     if(!localStorage.getItem("token") || localStorage.getItem("token")=="null"){
+        window.location(window.location.origin)
+    }
  $( document ).ready(function() {    
     menu();    
 

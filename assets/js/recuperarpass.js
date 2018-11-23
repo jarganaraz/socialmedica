@@ -22,7 +22,7 @@ function enviarmailrecuperacion(){
                 email:formjson.email,
 
             },
-            url: "http://192.168.2.236:3800/api/solicitarcambiocontrasenia/",
+            url: window.location.origin+":3800/api/solicitarcambiocontrasenia/",
             dataType: 'json',
             success: function (data) {
 

@@ -23,7 +23,7 @@ inittoast();
 
             $.ajax({
                 type: 'POST',
-                url: 'http://localhost:3800/api/enviarmailcontacto/',
+                url: window.location.origin+':3800/api/enviarmailcontacto/',
                 headers: {
                     'Authorization':localStorage.getItem("token"),
                 },
@@ -43,17 +43,19 @@ inittoast();
                     }else{
 
                   
-                    console.log("error");
+                    console.log(data);
                         destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                     }
                     },
                 error:function(error){
-                    console.log("error");
+                    console.log(error);
                         destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                     },
                 complete: function(){
 
                     setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, ); 
+                    setTimeout(function () {  location.reload();  }, 4000, ); 
+                   
 
                 }
 

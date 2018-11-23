@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <script src="../assets/import/jquery/dist/jquery.min.js"></script>
-    <link rel="preconnect" href="http://localhost:3800">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,7 +19,7 @@
 
 
 
-    <title>Social Medica - Editar Perfil</title>
+    <title>Social Médica  - Editar Perfil</title>
 </head>
 <body onload="loadconfig();">
 
@@ -38,20 +38,22 @@
 
 
       <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
-            <a class="navbar-brand" href="#">
-                    <!--<a href="http://www.visualmedica.com"><img src="../assets/images/logo.png" class="imgHeader" ></a>-->
-                    <span>Social Medica</span>
+            <a href="http://www.visualmedica.com" class="amenu"><img src="../assets/images/logo.png" class="imgHeader" ></a>
+            <a>
+               
+            </a>
             <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            </a>
+            
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class=" navbar-left navbar-nav ml-auto" id="navbarleft">
+                <ul class=" navbar-left navbar-nav " id="navbarleft">
                 </ul>
                 <ul class=" navbar-right navbar-nav ml-auto" id="navbarright">
                 </ul>
             </div>
           </nav>
+
 
     
         <div id="alerplaceholder"></div>
@@ -87,10 +89,10 @@
                     <textarea class="form-control" id="descripcion" rows="3" name="descripcion" id="descripcion"></textarea>
             </div>
 
-            <div class="form-group">
+           <!-- <div class="form-group">
                     <label for="curriculum">Curriculum</label>
                     <textarea class="form-control" id="curriculum" rows="3" name="curriculum" id="curriculum"></textarea>
-            </div>
+            </div>-->
 
 
             <div id="curriculumaviso">
@@ -211,6 +213,10 @@
      flags('pais');
 
     selectItemByValue(document.getElementById('pais'),'ZW');
+
+     if(!localStorage.getItem("token") || localStorage.getItem("token")=="null"){
+        window.location(window.location.origin)
+    }
 
     });
   
