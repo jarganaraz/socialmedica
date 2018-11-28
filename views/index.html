@@ -145,7 +145,7 @@
                   <label class="form-check-label" for="exampleCheck1"><h6>Mantener conectado</h6></label>
                 </div>
                 <div class="form-group "> <h6>Si olvido su contraseña recupere haciendo <a href="recuperarpass.html" class="trigger" id="recuperarpass">click aqui</a> </h6></div>
-                <button  class="btn btn-primary sbutnloguear" id="buttonloginindex">Iniciar Sesion</button>
+                <button  class="btn btn-primary butnloguear" id="buttonloginindex">Iniciar Sesion</button>
               </form>
 
 
@@ -165,7 +165,8 @@
             <div class="row">
             <!-- <a href="registropersona.html" class="btn btn-primary butnloguear">Ir Registro Medico</a>
              <a href="registroempresa.html" class="btn btn-primary butnloguear">Ir Registro Institucion</a>-->
-             <a href="registros.html" class="btn btn-primary butnloguear trigmodalcreate" id="registroopener">Crear una cuenta </a>
+             <a href="registros.html" class="btn btn-primary butnloguear trigmodalcreate" id="registroopenermedico">Crear una cuenta como medico </a>
+             <a href="registros.html" class="btn btn-primary butnloguear trigmodalcreate" id="registroopenerinstitucion">Crear una cuenta como institucion</a>
             </div>
         </div>
 
@@ -242,9 +243,13 @@
     })
 
 
-$("#registroopener").click(function(){
-    registroopener();
+$("#registroopenermedico").click(function(){
+    registromedicoopener();
         })
+        $("#registroopenerinstitucion").click(function(){
+            registroclinicaopener();
+        })
+
 
     
     menu();

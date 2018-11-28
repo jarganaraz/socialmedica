@@ -11,7 +11,8 @@ $('.owl-carousel').owlCarousel({
     autoplay:true,
     autoplayTimeout:5000,
     //autoWidth:true,
-    autoplayHoverPause:true
+    autoplayHoverPause:true,
+
 });
 
     $('.counter').counterUp({
@@ -67,6 +68,7 @@ function modalopener(){
 
 $("#modal").iziModal({
     iframe: true,
+    title: "Recuperar Contraseña",
     closeButton :true,
     //iframeHeight: 800,
    iframeURL: "./recuperarpass.html"
@@ -90,9 +92,10 @@ function registroopener(){
  $('#modal').iziModal('destroy');
     $("#modal").iziModal({
         iframe: true,
+        title: "Recuperar Contraseña",
         closeButton :true,
         iframeHeight: window.outerHeight*0.8,
-       iframeURL: "./registros.html"
+        iframeURL: "./registros.html"
     });
 
     $(document).on('click', '.trigmodalcreate', function (event) {
@@ -103,3 +106,45 @@ function registroopener(){
 
 
 }
+
+function registromedicoopener(){
+
+    
+    $('#modal').iziModal('destroy');
+       $("#modal").iziModal({
+           iframe: true,
+           title: "Recuperar Contraseña",
+           closeButton :true,
+           iframeHeight: window.outerHeight*0.8,
+           iframeURL: "./registropersona.html"
+       });
+   
+       $(document).on('click', '.trigmodalcreate', function (event) {
+           event.preventDefault();
+           $('#modal').iziModal('open');
+       });
+       
+   
+   
+   }
+
+   function registroclinicaopener(){
+
+    
+    $('#modal').iziModal('destroy');
+       $("#modal").iziModal({
+           iframe: true,
+           title: "Recuperar Contraseña",
+           closeButton :true,
+           iframeHeight: window.outerHeight*0.8,
+           iframeURL: "./registroempresa.html"
+       });
+   
+       $(document).on('click', '.trigmodalcreate', function (event) {
+           event.preventDefault();
+           $('#modal').iziModal('open');
+       });
+       
+   
+   
+   }

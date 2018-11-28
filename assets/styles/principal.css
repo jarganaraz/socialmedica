@@ -534,7 +534,7 @@ strong {
 }
 .butnloguear{
     margin: auto;
-    width: 200px;
+    min-width: 200px;
     margin-bottom: 2px;
     display: block;
     margin: auto;
