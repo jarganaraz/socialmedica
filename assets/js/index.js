@@ -113,7 +113,7 @@ function registromedicoopener(){
     $('#modal').iziModal('destroy');
        $("#modal").iziModal({
            iframe: true,
-           title: "Recuperar Contraseña",
+           title: "Registro Medico",
            closeButton :true,
            iframeHeight: window.outerHeight*0.8,
            iframeURL: "./registropersona.html"
@@ -134,7 +134,7 @@ function registromedicoopener(){
     $('#modal').iziModal('destroy');
        $("#modal").iziModal({
            iframe: true,
-           title: "Recuperar Contraseña",
+           title: "Registro Clinica",
            closeButton :true,
            iframeHeight: window.outerHeight*0.8,
            iframeURL: "./registroempresa.html"

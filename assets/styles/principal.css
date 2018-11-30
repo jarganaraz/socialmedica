@@ -7,6 +7,7 @@ body{
     line-height: 1.42857143;
     color: #333;*/
                 /*background-color: #fff;*/
+                background-color: #f3f3f3;
                 margin-bottom: .5rem;
                 font-family: inherit;
                 font-weight: 500;
@@ -166,11 +167,11 @@ label.error{
   }
   
   
-.jumbotron{
-/*background-color: rgba(255, 255, 255, 0.75) !important;*/
-/*background-color: #007bff !important;*/
+/*.jumbotron{
+background-color: rgba(255, 255, 255, 0.75) !important;
+background-color: #007bff !important;
 
-}
+}*/
   
   
 .navbar-toggler{
@@ -629,13 +630,6 @@ strong {
         margin-top: 2%;
     }
 
- /*   .row1{
-        display: flex !important;
-    }*/
-
-    .cuadrobotonloguear{
-        
-    }
 
 }
 
@@ -945,4 +939,23 @@ margin-right: 2px;
 .imgsoporte{
     max-height: 90%;
     max-width: 100%;
+}
+.imgqr{
+    height: 70%;
+    width: auto;
+    display: block;
+    margin: auto;
+} 
+
+.seleccioninbox{
+    background-color: cornflowerblue;
+    text-align: center;
+    border-radius: 7px;
+    color: white;
+    margin-bottom: 1%;
+}
+
+.iconperfil{
+    color:#4e4e4e;
+    margin-right: 2px;
 }

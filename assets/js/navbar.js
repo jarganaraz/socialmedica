@@ -29,7 +29,7 @@ function menu (){
 		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='listaest'> <a class='nav-link' onclick='viewerdirect()'> <i class='far fa-plus-square'></i>Lista Estudios </a></li>");
 		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout' href='contactenos.html'  ><i class='far fa-envelope'></i>Contáctenos </a></li>");
 
-		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item notification-container' id='inbox'>  <a class='nav-link' href='inbox.html'> <span class='notification-counter  visualizarfalse' id='globenotif'></span><i class='fas fa-inbox'></i></i>Inbox </a></li>");
+		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item notification-container' id='inbox'>  <a class='nav-link' href='inboxinstitucion.html'> <span class='notification-counter  visualizarfalse' id='globenotif'></span><i class='fas fa-inbox'></i></i>Inbox </a></li>");
 		$("#navbarright").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout' onclick='logout()' ><i class='fas fa-power-off'></i>Cerrar Sesión </a></li>");
 
 	}else{
@@ -82,6 +82,8 @@ $.ajax({
 	
 
 		if(data.unviewed > 0 ){
+			console.log(data.unviewed);
+
 			document.getElementById('globenotif').classList.remove('visualizarfalse');
 			//document.getElementById('inbox').classList.add('animated' , 'flash' ,'inboxtrue');
 			document.getElementById('globenotif').classList.add('animated' , 'flash' ,'inboxtrue','vizualizartrue','infinite','animated-slow');
@@ -121,7 +123,7 @@ window.open("https://virtualfilm.visualmedica.com/viewer/index.php")
 
 $('#inbox').click(function(){
 
-	console.log("cliked22")
+
 	document.getElementById('globenotif').classList.remove('animated' , 'flash' ,'inboxtrue');
 	document.getElementById('globenotif').innerHTML = ""; 
 	document.getElementById('globenotif').classList.add('notification-counter-deactivated','visualizarfalse');
@@ -131,10 +133,12 @@ $('#inbox').click(function(){
 
 function borrarglobo(){
 
-	console.log("cliked")
+	
 	document.getElementById('globenotif').classList.remove('animated' , 'flash' ,'inboxtrue');
 	document.getElementById('globenotif').innerHTML = ""; 
 	document.getElementById('globenotif').classList.add('notification-counter-deactivated','visualizarfalse');
 
 }
+
+
 

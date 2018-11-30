@@ -35,6 +35,8 @@ if(identity && identity != "null" && identity.role == "clinica" && identity.prim
     $("#modal").iziModal({
         iframe: true,
         closeButton :true,
+        iframeHeight: window.outerHeight*0.7,
+        width: '50%',
         title: "Gateway - Social Medica",
         //iframeHeight: 800,
        iframeURL: "./gateway.html"
@@ -235,7 +237,7 @@ div.appendChild(div2);
 
 header.appendChild(div,loadbar);
 
-tree.appendChild(header);
+//tree.appendChild(header);
 
 /** BODY **/
 
@@ -244,16 +246,16 @@ var filajumbotron = createdomele('div','class','row');
 var stat1 = createdomele('div','class','col');
 var txtstat1 = createdomele('h5','class','textotamañores')
 if(data.name && data.name != "null")
-var text1 = data.name ;
+var text1 = '<i class="far fa-address-card iconperfil"></i>'+data.name ;
 if(data.surname && data.surname != "null")
-var text1 =  data.surname;
+var text1 =  '<i class="far fa-address-card iconperfil"></i>'+data.surname;
 if(data.name && data.surname)
-var text1 = data.name +" "+ data.surname;
+var text1 = '<i class="far fa-address-card iconperfil"></i>'+data.name +" "+ data.surname;
 
 var stat2 = createdomele('div','class','col');
 var txtstat2 = createdomele('h5','class','textotamañores');
 if(data.telefono){
-var text2 = data.telefono;
+var text2 = '<i class="fas fa-phone iconperfil"></i>'+data.telefono;
 }
 else{
     var text2 = "";
@@ -261,7 +263,7 @@ else{
 var stat3 = createdomele('div','class','col');
 var txtstat3 = createdomele('h5','class','textotamañores');
 if(data.email)
-var text3 = data.email;
+var text3 ='<i class="fas fa-at iconperfil"></i>'+ data.email;
 
 
 
@@ -280,6 +282,8 @@ filajumbotron.appendChild(stat3);
 jumbotron.appendChild(filajumbotron);
 
 tree.appendChild(jumbotron);
+
+tree.appendChild(header);
 
 /** CURRICULUM INFO **/
 
@@ -426,10 +430,10 @@ div.appendChild(div2);
 
 header.appendChild(div,loadbar);
 
-tree.appendChild(header);
+//tree.appendChild(header);
 
 /** BODY **/
-
+/*
 var jumbotron = createdomele('div','class','jumbotron stats container media-custom');
 var filajumbotron = createdomele('div','class','row');
 var stat1 = createdomele('div','class','col');
@@ -452,7 +456,33 @@ else{
 var stat3 = createdomele('div','class','col');
 var txtstat3 = createdomele('h5','class','textotamañores');
 if(data.email)
-var text3 = data.email;
+var text3 = data.email;*/
+
+
+
+var jumbotron = createdomele('div','class','jumbotron stats container media-custom');
+var filajumbotron = createdomele('div','class','row');
+var stat1 = createdomele('div','class','col');
+var txtstat1 = createdomele('h5','class','textotamañores')
+if(data.name && data.name != "null")
+var text1 = '<i class="far fa-address-card iconperfil"></i>'+data.name ;
+if(data.surname && data.surname != "null")
+var text1 =  '<i class="far fa-address-card iconperfil"></i>'+data.surname;
+if(data.name && data.surname)
+var text1 = '<i class="far fa-address-card iconperfil"></i>'+data.name +" "+ data.surname;
+
+var stat2 = createdomele('div','class','col');
+var txtstat2 = createdomele('h5','class','textotamañores');
+if(data.telefono){
+var text2 = '<i class="fas fa-phone iconperfil"></i>'+data.telefono;
+}
+else{
+    var text2 = "";
+}
+var stat3 = createdomele('div','class','col');
+var txtstat3 = createdomele('h5','class','textotamañores');
+if(data.email)
+var text3 ='<i class="fas fa-at iconperfil"></i>'+ data.email;
 
 
 
@@ -470,7 +500,9 @@ filajumbotron.appendChild(stat3);
 
 jumbotron.appendChild(filajumbotron);
 
+
 tree.appendChild(jumbotron);
+tree.appendChild(header);
 
 /** CURRICULUM INFO **/
 
@@ -498,6 +530,8 @@ cjumbotron.appendChild(curriculum);
 tree.appendChild(cjumbotron);
 
 body.appendChild(tree);
+
+
 
 }
 
