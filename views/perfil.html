@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
     <link rel="stylesheet" href="../assets/import/fontawesome5/css/all.min.css">
     <!-- Start of  Zendesk Widget script -->
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5f5f1e68-99a1-47f6-913b-bebfbba4a5ce"> </script>
+    <script type="text/javascript"> window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s= d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set. _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8"); $.src="https://v2.zopim.com/?53JYyBlTtNv0a4XukuFBL8COytEaELiA";z.t=+new Date;$. type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script"); </script>
     <!-- End of  Zendesk Widget script -->
     <!--    MODAL       -->
     <link rel="stylesheet" href="../assets/import/iziModal/css/iziModal.min.css">
@@ -49,10 +49,16 @@
 
 
 
+              <div id="modal"> <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
+                <!-- Modal content -->
+            </div>
 
-              <div id="modal" >
- 
-                </div>
+            <div id="modalpuntuaciones"> <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
+           <!-- Modal content -->
+            </div>
+             
+  
+
 
     <script >
 
@@ -65,7 +71,41 @@ $( document ).ready(function() {
     menu();    
     validar();
     gatewayOpener()
+
+$("#modal").iziModal({
+           iframe: true,
+           title: "Puntuar",
+           closeButton :true,
+           iframeHeight: window.outerHeight*0.4,
+           iframeURL: "./iframepuntuar.html"
+       });
+   
+       $(document).on('click', '.trigger', function (event) {
+           event.preventDefault();
+           $('#modal').iziModal('open');
+       });
+
+
+
+    
+   
+      $(document).on('click', '.verpuntos', function (event) {
+           event.preventDefault();
+           $('#modalpuntuaciones').iziModal('open',event);
+       });
+       
+
+
+
+
+
+
 });
+
+
+
+
+
 
 
     </script>
@@ -75,6 +115,7 @@ $( document ).ready(function() {
     <script src="../assets/import/bootstrap/js/bootstrap.min.js" async></script>
     <script src="../assets/animation/main.js"></script>
     <script src="../assets/import/iziModal/js/iziModal.min.js"></script>
+    <script src="../assets/import/rater/rater.min.js"></script>
 
 
     

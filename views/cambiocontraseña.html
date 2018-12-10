@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+    <!--    CSS    -->
+    <link rel="stylesheet" href="../assets/import/OwlCarousel2-develop/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/import/OwlCarousel2-develop/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+    <link rel="stylesheet" href="../assets/import/fontawesome5/css/all.min.css">
+    <link rel="stylesheet" href="../assets/import/iziModal/css/iziModal.min.css">
+    <link rel="stylesheet" href="../assets/import/iziToast/dist/css/iziToast.min.css">
+   <!-- <script src="../assets/js/worker.js"></script> -->
+
+<!-- Start of  Zendesk Widget script -->
+<script type="text/javascript"> window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s= d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set. _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8"); $.src="https://v2.zopim.com/?53JYyBlTtNv0a4XukuFBL8COytEaELiA";z.t=+new Date;$. type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script"); </script>
+<!-- End of  Zendesk Widget script -->
+
+    <title>Social Médica </title>
+</head>
+<body >
+
+
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbarapplication font-weight-normal ">
+                <a href="http://www.visualmedica.com" class="amenu"><img src="../assets/images/logo.png" class="imgHeader" ></a>
+                <a>
+                   
+                </a>
+                <button  id="botonmenu"class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class=" navbar-left navbar-nav " id="navbarleft">
+                    </ul>
+                    <ul class=" navbar-right navbar-nav ml-auto" id="navbarright">
+                    </ul>
+                </div>
+              </nav>
+
+              <div id="alerplaceholder"></div>
+
+<div>
+
+
+        <div class="owl-carousel owl-theme">
+                <div> <img class="imgcarrusel" src="../assets/images/banner.jpg" alt=""></div>
+                <div> <img class="imgcarrusel" src="../assets/images/banner2.jpg" alt=""></div>
+        </div>
+
+    <div class="progress1 " id="loading" style="display:none">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+    </div>
+    
+
+
+<div class="jumbotron container jumbotronmodificado animated fadeInUp slow media-custom">
+
+
+
+        <form class="row" id="cambiopass">
+
+            
+                <div class="form-group col-md-12">
+                  <label for="password"><h6>Contraseña</h6></label>
+                  <input type="password" class="form-control" id="password" placeholder="contraseña" minlength="5"  required name="password">
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="password1"><h6>Repita Contraseña</h6></label>
+                  <input type="password" class="form-control" id="password1" minlength="5" placeholder="contraseña" required name="password1">
+                </div>
+                
+       
+               <!-- <div class="form-group "> <h6 class="allignright">Si olvidó su contraseña puede recuperarla haciendo   <a href="recuperarpass.html" class="trigger" id="recuperarpass">click aqui</a> </h6></div>-->
+                <div class="form-group col-md-12">
+               <button  class="btn btn-primary butnloguear" id="buttoncambiopass">Cambiar Contraseña</button>
+                 </div>
+              </form>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="container animated fadeInUp slow jumbotron media-custom jumbotronmodificado" id="contadores">
+    <div class="row">
+        <div class="col col-md-3 single-fact">
+            <h2 class="counter">5000</h2>
+            <p class="text-uppercase">Medicos Registrados</p>
+        </div>
+        <div class="col col-md-3 single-fact">
+            <h2 class="counter">5000</h2>
+            <p class="text-uppercase">Instituciones Registradas</p>
+        </div>
+        <div class="col col-md-3 single-fact">
+            <h2 class="counter">5000</h2>
+            <p class="text-uppercase">Estudios Disponibles</p>
+        </div>
+        <div class="col col-md-3 single-fact">
+            <h2 class="counter">5000</h2>
+            <p class="text-uppercase">Estudios Informados</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div id="modal" >
+ 
+</div>
+ 
+<div class="testfoot"></div>
+
+
+</body>
+
+    <!--    JQUERY    -->
+    <script src="../assets/import/jquery/dist/jquery.min.js" ></script>
+
+    <!--    CAROUSEL    -->
+    <script src="../assets/import/OwlCarousel2-develop/dist/owl.carousel.min.js"></script>
+
+    <!--    VALIDATE    -->
+    <script src="../assets/import/formvalidator/dist/jquery.validate.min.js" ></script>
+
+    <!--    BOOTSTRAP    -->
+    <script src="../assets/import/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--    COUNTER     -->
+    <script src="../assets/import/waypoint/jquery.waypoints.min.js"></script>
+    <script src="../assets/import/counter/jquery.counterup.min.js"></script>
+
+    <!--    ELEMENTS    -->
+    <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/login.js"></script>
+    <script src="../assets/js/cambiocontrasenia.js"></script>
+
+    <!--    MODAL       -->
+    <script src="../assets/import/iziModal/js/iziModal.min.js"></script>
+    <script src="../assets/import/iziToast/dist/js/iziToast.min.js"></script>
+
+
+    <script>
+
+
+
+
+
+    
+    menu();
+
+$.validator.messages.required = 'Este campo es obligatorio';
+$.validator.messages.equalTo = 'Las contraseñas no coinciden';
+
+ $("#cambiopass").validate({
+        rules: {
+                password: "required",
+                password1: {
+                        required:true,
+                        equalTo: "#password"
+                },
+        },
+        messages: {
+                equalTo: "Las contraseñas deben coincidir",
+        }
+        
+ });
+
+var form = $( "#cambiopass" );
+$( "#buttoncambiopass" ).click(function() {
+   // evt.preventDefault();
+  if(form.valid()){
+        enviarform();
+  }
+});
+
+    
+
+            </script>
+
+</html>

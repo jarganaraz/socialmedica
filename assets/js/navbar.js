@@ -4,6 +4,15 @@ var protocolo = location.protocol;
 var path= window.location.origin +"/socialmedica2.0/";
 var unviewedmsg = window.location.origin +":3800/api/unviewed-messages/";
 
+
+if(location.pathname != "/socialmedica2.0/views/" && location.pathname != "/socialmedica2.0/" && location.pathname != "/socialmedica2.0/views/index.html" && location.pathname != "/socialmedica2.0/views/cambiocontrase%C3%B1a.html" && location.pathname != "/socialmedica2.0/views/noticias.html" && location.pathname != "/socialmedica2.0/views/contactenos.html" ){
+
+	if(!localStorage.getItem('identity')){
+		window.location.replace(location.origin);
+		
+	}
+}
+
 function menu (){
 
 	if(!localStorage.getItem('identity')){
@@ -24,8 +33,8 @@ function menu (){
 
 
 		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='perfil'> <a class='nav-link' href='perfil.html'> <i class='fas fa-user-edit'></i>Perfil</a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='medicos'> <a class='nav-link' href='listausers.html'> <i class='fas fa-users'></i>Médicos  </a></li>");
-		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='estudios'> <a class='nav-link logout' href='listamedicos.html'> <i class='fas fa-users'></i>Mis Médicos </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='medicos'> <a class='nav-link' href='listausers.html'> <i class='fas fa-users'></i>Médicos Disponibles </a></li>");
+		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='estudios'> <a class='nav-link logout' href='listamedicos.html'> <i class='fas fa-users'></i>Médicos Elegidos </a></li>");
 		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='listaest'> <a class='nav-link' onclick='viewerdirect()'> <i class='far fa-plus-square'></i>Lista Estudios </a></li>");
 		$("#navbarleft").append("<li class='text-nowrap divmenuitems nav-item' id='logout'> <a class='nav-link logout' href='contactenos.html'  ><i class='far fa-envelope'></i>Contáctenos </a></li>");
 
@@ -75,14 +84,14 @@ $.ajax({
 	dataType: 'json',
 	success: function (data) {
 
-		console.log(data.unviewed);
+	
 
 	if(data && document.getElementById('globenotif')){
 
 	
 
 		if(data.unviewed > 0 ){
-			console.log(data.unviewed);
+		
 
 			document.getElementById('globenotif').classList.remove('visualizarfalse');
 			//document.getElementById('inbox').classList.add('animated' , 'flash' ,'inboxtrue');

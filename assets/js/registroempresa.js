@@ -16,8 +16,8 @@ var apiuser = window.location.origin +":3800/api/register";
 var datosuser = window.location.origin +":3800/api/user/";
 var imageuserapi = window.location.origin +":3800/api/get-image-user/";
 var adddelmedicoapi = window.location.origin +":3800/api/adddelmedico";
-var adddelmedico = window.location.origin +":3000/medico/addmedico";
-var addempresa = window.location.origin +":3000/institucion/addinsti";
+var adddelmedico = window.location.origin +":8300/medico/addmedico";
+var addempresa = window.location.origin +":8300/institucion/addinsti";
 
 
 function validar(){
@@ -60,22 +60,18 @@ function registrar(){
 
                 if (data ) {   
                     destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');             
-                      /*  $('#alerplaceholder').html('<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">'+data.message+'</div>')
-                        setTimeout(function () { $('#alert').removeClass("show");}, 3000, );*/
+       
  
                     
                 }else{         
                     destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');        
-                       /* $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect user or password</div>')
-                        setTimeout(function () { $('#alert').removeClass("show"); }, 3000, ); */
+       
           
                 }
             },
             error: function(err){
                 destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
-               /* console.log(err);        
-                        $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">Ocurrio un problema</div>')
-                        setTimeout(function () { $('#alert').removeClass("show"); }, 3000, );*/
+      
             },
             complete: function(){
                 if (valida == 1){

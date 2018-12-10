@@ -859,7 +859,7 @@ body > div:nth-child(2) > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.o
 }
 
 .animatedgateway{
-    margin-top: 4%;
+    margin-top: 1%;
 }
 
 .jumbotronmodificado{
@@ -953,9 +953,142 @@ margin-right: 2px;
     border-radius: 7px;
     color: white;
     margin-bottom: 1%;
+    cursor: pointer;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .iconperfil{
     color:#4e4e4e;
     margin-right: 2px;
+}
+
+.inboxactivo{
+    background-color: #216190!important;
+    border-radius: 7px;
+}
+
+.inboxbuttonselect{
+    margin-bottom: 0px;
+    padding-top: 5px;
+}
+
+.allignright{
+    text-align: right;
+    width: 80%
+}
+.recuperarpassymantener{
+    display: flex;
+}
+
+.textocontacto12{
+    border-left: 2px;
+    border-color: #216190;
+    border-radius: 2px;
+    border-left-width: 1px;
+    border-left-style: groove;
+}
+
+.puntajeestrella{
+    font-size: 5rem;
+    font-family: sans-serif;
+    /*height: 100% !important;
+    width: 100% !important;*/
+}
+
+.centerpunt{
+    display: block;
+    margin: auto;
+    
+}
+
+.puntajeestrella1{
+    font-size: 2rem;
+    font-family: sans-serif;
+    /*height: 100% !important;
+    width: 100% !important;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+.rate-base-layer
+{
+    color: #aaa;
+}
+.rate-hover-layer
+{
+    color: orange;
+}
+.rate2
+{
+    font-size: 35px;
+}
+.rate2 .rate-hover-layer
+{
+    color: pink;
+}
+.rate2 .rate-select-layer
+{
+    color: red;
+}
+.im
+{
+    background-image: url('./images/heart.gif');
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+.im2
+{
+    background-image: url('./images/emoji5.png');
+    background-size: 64px 64px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
+#rate5 .rate-base-layer span, #rate7 .rate-base-layer span
+{
+    opacity: 0.5;
+}
+hr
+{
+    border: 1px solid #ccc;
+}
+p
+{
+    font-size: 15px;
+}
+
+.btn-iframes{
+
+font-size: 1rem!important;
+}
+
+.estudiosqueinformo{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+padding-left: 0%
 }

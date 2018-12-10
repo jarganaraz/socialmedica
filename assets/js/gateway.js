@@ -31,24 +31,24 @@ inittoast();
                     name: formjson.name,
                     email: formjson.email,
                     message: formjson.message,
-                  //  telefono: JSON.parse(localStorage.getItem("identity")).telefono
+                    telefono: formjson.telefono
                 },
                 dataType: 'json',
                 success: function (data) {
 
-                    console.log(data);
+                  
         
                     if(data && data.message != "null"){
                         destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');
                     }else{
 
                   
-                    console.log(data);
+                   
                         destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                     }
                     },
                 error:function(error){
-                    console.log(error);
+                 
                         destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                     },
                 complete: function(){
@@ -72,7 +72,7 @@ inittoast();
 
 
     function inittoast(){ 
-        console.log("inittoat");      
+         
         iziToast.show({
         title: '<i class="fas fa-spinner fa-pulse" style="color:green"></i> Enviando correo de Contacto',
         //message: ' <i class="fas fa-spinner fa-pulse"></i> What would you like to add?',
@@ -87,7 +87,7 @@ inittoast();
     
     function destroytoast(msg){
     
-        console.log("destroytoast");
+    
         iziToast.destroy();
     
     iziToast.show({

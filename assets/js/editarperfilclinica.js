@@ -152,7 +152,7 @@ function modificar () {
                 processData: false,
                 error: function(res){
 
-                    console.log(res)
+                  
                 },
                 complete:function(){
                     counter1 = counter1+1;
@@ -209,7 +209,7 @@ function modificar () {
             
          },
          error: function(res){
-             console.log(res)
+       
          },
          complete:function(){
             counter1 = counter1+1;

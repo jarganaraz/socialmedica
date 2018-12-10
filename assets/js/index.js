@@ -26,7 +26,7 @@ var waypoint = new Waypoint({
     handler: function() {
        // counter();
         this.destroy();
-      console.log(this.element.id + ' triggers at ' + this.triggerPoint);
+ 
     
       
     },
@@ -59,7 +59,7 @@ var waypoint = new Waypoint({
 
 
 function closemodal(){
-    console.log("close modal");
+    
     $("#modal").iziModal('close');
 }
 

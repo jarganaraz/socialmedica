@@ -28,11 +28,11 @@ var count=0;
 
 function getconfig(){
     if(JSON.parse(localStorage.getItem('identity')).role == 'usuario'){
-       // console.log("usuario");
+
         pagination(clinicas);
     }else{
         pagination(users);
-      //  console.log("clinica1");
+ 
     }
 
 
@@ -42,7 +42,7 @@ var body = document.getElementsByTagName('body')[0];
 
 function pagination(url){
    
-//console.log(url);
+
 if(!localStorage.getItem('token') || !localStorage.getItem('identity'))
 window.location = 'index.html';
 
@@ -189,7 +189,7 @@ function render(data,respuesta,lista,container){
 
  
     count = count+1;
-    //console.log(count);
+    
     
     if(count >= 5){
 
@@ -364,12 +364,12 @@ function filtrar (){
 
 
         var filtro = document.getElementById('filtro').value;
-        //console.log(filtro);
+      
 
 
 if(filtro && filtro != "null"){
 
-//console.log("entro");
+
     
     event.preventDefault();
     event.stopImmediatePropagation();

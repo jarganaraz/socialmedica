@@ -108,7 +108,7 @@ function llenarcampos () {
             }
         },
         error: function(err){
-            console.log(err);
+          
                     $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">Ocurrio un Problema</div>')
                     setTimeout(function () { $('#alert').removeClass("show"); }, 2000, );
 
@@ -156,12 +156,11 @@ function modificar () {
                 enctype: 'multipart/form-data',
                 processData: false,
                 error: function(res){
-                    console.log("img");
-                    console.log(res)
+        
                 },
                 complete:function(){
                     counter = counter+1;
-                    console.log("imgc");
+           
 
                     if (counter ==3){
                         document.getElementById('loading').removeAttribute('style');
@@ -190,12 +189,11 @@ function modificar () {
             enctype: 'multipart/form-data',
             processData: false,
             error: function(res){
-                console.log("cur");
-                console.log(res)
+       
             },
             complete:function(){
                 counter = counter +1;
-                console.log("curc");
+           
                 if (counter ==3){
                     document.getElementById('loading').removeAttribute('style');
                 document.getElementById('loading').setAttribute('display','none');
@@ -250,7 +248,6 @@ var studytipe = JSON.stringify({
          },
          error: function(res){
 
-             console.log(res)
          },
          complete: function(){
              counter = counter+1;

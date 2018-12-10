@@ -27,6 +27,11 @@ var count=0;
 
 
 function paginationmio(){
+
+    document.getElementById('mismedicos').classList.add('inboxactivo');
+    document.getElementById('solicitantes').classList.remove('inboxactivo');
+
+
     document.getElementById('contenedor1').classList.add('visualizarfalse')
     document.getElementById('pagination-demo1').classList.add('visualizarfalse')
     document.getElementById('contenedor').classList.remove('visualizarfalse')
@@ -35,7 +40,7 @@ function paginationmio(){
 
 
     document.getElementById('contenedor').innerHTML = ""
-    //console.log(url);
+
     if(!localStorage.getItem('token') || !localStorage.getItem('identity'))
     window.location = 'index.html';
     
@@ -92,7 +97,7 @@ function paginationmio(){
                            // document.getElementById('listausuarios2').innerHTML="";
                         }
     
-                        console.log(data);
+               
                             
                        data.messagesrta.forEach(element => {
                             //var i;
@@ -115,6 +120,11 @@ function paginationmio(){
 
     
 function paginationsoli(){
+
+    document.getElementById('mismedicos').classList.remove('inboxactivo');
+    document.getElementById('solicitantes').classList.add('inboxactivo');
+
+
     document.getElementById('contenedor').classList.add('visualizarfalse')
     document.getElementById('pagination-demo').classList.add('visualizarfalse')
     document.getElementById('contenedor1').classList.remove('visualizarfalse')
@@ -122,7 +132,7 @@ function paginationsoli(){
     document.getElementById('listausuarios1').classList.add('visualizarfalse')
 
     
-    //console.log(url);
+    
     if(!localStorage.getItem('token') || !localStorage.getItem('identity'))
     window.location = 'index.html';
     
@@ -179,8 +189,7 @@ function paginationsoli(){
                            // document.getElementById('listausuarios2').innerHTML="";
                         }
     
-                        console.log(data);
-                            
+                 
                        data.messagesrta.forEach(element => {
                             //var i;
                             i = i+1;

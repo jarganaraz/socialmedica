@@ -15,8 +15,8 @@ var apiuser = window.location.origin +":3800/api/register";
 var datosuser = window.location.origin +":3800/api/user/";
 var imageuserapi = window.location.origin +":3800/api/get-image-user/";
 var adddelmedicoapi = window.location.origin +":3800/api/adddelmedico";
-var getestudioslista = window.location.origin +":3000/institucion/getestudiosmedico/";
-var getestudiosinstilista = window.location.origin +":3000/institucion/getestudiosinsti/";
+var getestudioslista = window.location.origin +":8300/institucion/getestudiosmedico/";
+var getestudiosinstilista = window.location.origin +":8300/institucion/getestudiosinsti/";
 
 var primera = true;
 var entrando = true;
@@ -62,9 +62,9 @@ function pagination(url){
                 dataType: 'json',
             success: function (data) {
 
-                console.log(data);
+            
                 if(data.respuesta.length>0){
-                var totalPages = data.total;
+                var totalPages = data.pages;
                 var currentPage = $('#pagination-demo').twbsPagination('getCurrentPage');
                 $('#pagination-demo').twbsPagination('destroy');
                 $('#pagination-demo').twbsPagination($.extend({}, defaultOpts, {

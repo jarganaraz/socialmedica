@@ -111,7 +111,7 @@ function login(email,password){
                                             window.location.href = "gateway.html";
                                         },
 										error:function(err){
-											console.log(err);
+											
 										}
 
                                         });
@@ -127,7 +127,7 @@ function login(email,password){
                               });
 
                         }else{
-                            console.log("si pero fallo")
+                        
                             
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">'+data.message+'</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, );
@@ -135,7 +135,7 @@ function login(email,password){
                          }
                     
                 }else{    
-                    console.log("els");
+               
                     
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">message:Usuario o Contraseña Incorrecta</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, ); 
@@ -143,15 +143,14 @@ function login(email,password){
                 }
             },
             error: function(err){
-                console.log(err);
-                console.log("error1");
+        
                 
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert"> '+err.responseJSON.message+'</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, );
 
             },
             complete:function(){
-                console.log("complete");
+       
 				document.getElementById('loading').removeAttribute('style');
                 document.getElementById('loading').setAttribute('display','none');
                 document.getElementById("loading").style.display = "none";
@@ -209,7 +208,7 @@ function loginrecordado(email,password){
                                         window.location.href = "gateway.html";
                                     },
                                     error:function(err){
-                                        console.log(err);
+                                     
                                     }
 
                                     });
@@ -225,7 +224,7 @@ function loginrecordado(email,password){
                           });
 
                     }else{
-                        console.log("si pero fallo")
+               
                     $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">'+data.message+'</div>')
                     setTimeout(function () { $('#alert').removeClass("show"); }, 20000, );
                     
@@ -233,7 +232,7 @@ function loginrecordado(email,password){
                      }
                 
             }else{    
-                console.log("else");
+            
                     $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">message:Usuario o Contraseña Incorrecta</div>')
                     setTimeout(function () { $('#alert').removeClass("show"); }, 20000, ); 
                     
@@ -241,8 +240,7 @@ function loginrecordado(email,password){
             }
         },
         error: function(err){
-            console.log(err.responseJSON.message);
-            console.log("error1112");
+ 
             
             $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert"> '+err.responseJSON.message+'</div>')
             setTimeout(function () { $('#alert').removeClass("show"); }, 20000, );
@@ -250,7 +248,7 @@ function loginrecordado(email,password){
 
         },
         complete:function(){
-            console.log("complete");
+       
             document.getElementById('loading').removeAttribute('style');
             document.getElementById('loading').setAttribute('display','none');
             document.getElementById("loading").style.display = "none";

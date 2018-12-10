@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Social Médica  - Puntuar</title>
+    
+    <script src="../assets/import/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css" async>
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+    <script src="../assets/js/navbar.js"></script>
+    <!--animacion-->
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+    <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
+    <link rel="stylesheet" href="../assets/import/fontawesome5/css/all.min.css">
+    <!--    MODAL       -->
+    <link rel="stylesheet" href="../assets/import/iziModal/css/iziModal.min.css">
+    <link rel="stylesheet" href="../assets/import/iziToast/dist/css/iziToast.min.css">
+
+
+
+</head>
+<body class="animated fadeIn">
+
+
+    <div class="jumbotron container">
+        <div class="centerpunt">
+            <h6>Puntualidad:</h6>
+            <div class="rating  puntajeestrella1" data-rate-value=6 ></div>
+            <h6>Calidad del Informe:</h6>
+            <div class="rating2 puntajeestrella1" data-rate-value=6 ></div>
+            <h6>Contenido del Informe:</h6>
+            <div class="rating3 puntajeestrella1" data-rate-value=6 ></div>
+        </div>
+            <div>
+                <button class="btn btn-primary btn-block btn-iframes" id="enviarpuntos">Enviar</button>
+            </div>
+    </div>
+
+    
+
+
+
+    <script >
+
+        $( document ).ready(function() {
+var options = {
+    max_value: 5,
+    step_size: 0.5,
+    starSize: 100,
+    symbols: {
+        utf8_star: {
+            base: '\u2606',
+            hover: '\u2605',
+            selected: '\u2605',
+        },
+        utf8_hexagon: {
+            base: '\u2B21',
+            hover: '\u2B22',
+            selected: '\u2B22',
+        },
+        hearts: '&hearts;',
+        fontawesome_beer: '<i class="fa fa-beer"></i>',
+        fontawesome_star: {
+            base: '<i class="fa fa-star-o"></i>',
+            hover: '<i class="fa fa-star"></i>',
+            selected: '<i class="fa fa-star"></i>',
+        },
+        utf8_emoticons: {
+            base: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            hover: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            selected: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+        },
+      },
+      selected_symbol_type: 'utf8_star', // Must be a key from symbols
+}
+$(".rating").rate(options);
+$(".rating2").rate(options);
+$(".rating3").rate(options);
+
+})
+
+
+
+ $(document).on('click', '#enviarpuntos', function (event) {
+           event.preventDefault();
+     
+
+       
+       inittoast();
+
+
+
+
+
+    $.ajax({
+        type: 'POST',
+        url: window.location.origin +":3800/api/puntuar",
+        headers: {
+            'Authorization':localStorage.getItem("token"),
+        },
+        dataType: 'json',
+        data:{
+            puntualidad:$(".rating").rate("getValue"),
+            contenido:$(".rating3").rate("getValue"),
+            comentario:"",
+            calidad:$(".rating2").rate("getValue"),
+            receiver:window.parent.location.search.slice(4),
+            //receiver:location.search.slice(4)
+        },
+        success: function (data) {
+
+destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');
+            
+        },
+        error: function(err){
+            
+            destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
+        },
+        complete: function(){
+            setTimeout(function () { window.parent.$('#modal').iziModal('close'); window.parent.location.reload()  }, 2000, );
+
+        }
+
+    
+    });
+
+
+
+
+
+
+  function inittoast(){       
+        iziToast.show({
+        title: '<i class="fas fa-spinner fa-pulse" style="color:green"></i> Enviando correo de Recuperacion',
+        //message: ' <i class="fas fa-spinner fa-pulse"></i> What would you like to add?',
+        position:'center',
+        timeout: false,
+        progressBar:false,
+        close:false
+    
+    });
+    }
+    
+    
+    function destroytoast(msg){
+        iziToast.destroy();
+    
+    iziToast.show({
+        title:msg,
+        position:'center',
+        close:true
+    });
+    
+    }
+
+
+
+
+
+
+
+       });
+    </script>
+        
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/perfilpersona.js"></script>
+    <script src="../assets/import/bootstrap/js/bootstrap.min.js" async></script>
+    <script src="../assets/animation/main.js"></script>
+    <script src="../assets/import/iziModal/js/iziModal.min.js"></script>
+    <script src="../assets/import/rater/rater.min.js"></script>
+    <script src="../assets/import/iziToast/dist/js/iziToast.min.js"></script>
+
+
+    
+</body>
+</html>

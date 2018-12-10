@@ -37,7 +37,7 @@ function enviarmailrecuperacion(){
     
 
                         }else{
-                            console.log("si pero fallo")
+                        
 
                             destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                             
@@ -47,7 +47,7 @@ function enviarmailrecuperacion(){
                          }
                     
                 }else{    
-                    console.log("else");
+             
                     destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                        /* $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">'+data.message+'</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, ); */
@@ -55,15 +55,14 @@ function enviarmailrecuperacion(){
                 }
             },
             error: function(err){
-                console.log(err);
-                console.log("error1");
+     
                 destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
                         /*$('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert"> '+err.responseJSON.message+'</div>')
                         setTimeout(function () { $('#alert').removeClass("show"); }, 2000, );*/
 
             },
             complete:function(){
-                console.log("complete");
+          
 				document.getElementById('loading').removeAttribute('style');
                 document.getElementById('loading').setAttribute('display','none');
                 document.getElementById("loading").style.display = "none";

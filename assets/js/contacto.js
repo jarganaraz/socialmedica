@@ -73,11 +73,11 @@ function getdata(){
  
             data.forEach(element => {
 
-               // console.log(data[i-1].text+ "&#13;");
+               
 
                 i = i+1;           
                 
- console.log(data[i-1].created_at)
+
                 if(data[i-1].emitter._id == identity._id ){
                     
                
@@ -216,7 +216,7 @@ function enviarmensaje(){
 }
 
 	function salir(){
-	 console.log("salir");
+
 	window.location = "inbox.html";
 	}
 

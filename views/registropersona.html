@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../assets/import/iziModal/css/iziModal.min.css">
     <link rel="stylesheet" href="../assets/import/iziToast/dist/css/iziToast.min.css">
     <!-- Start of  Zendesk Widget script 
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5f5f1e68-99a1-47f6-913b-bebfbba4a5ce"> </script>
+<script type="text/javascript"> window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s= d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set. _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8"); $.src="https://v2.zopim.com/?53JYyBlTtNv0a4XukuFBL8COytEaELiA";z.t=+new Date;$. type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script"); </script>
  End of  Zendesk Widget script -->
 
 
@@ -44,12 +44,12 @@
                     </div>
                      <div class="form-row">
                             <div class="form-group col-md-6">
-                                  <label for="pais">Pais</label>
+                                  <label for="pais">País</label>
                                   <select class="form-control form-control1 selectlargo" id="pais1" name="pais" required>
                                       </select>    
                             </div>
                             <div class="form-group col-md-6">
-                                 <label for="telefono">Telefono</label>
+                                 <label for="telefono">Teléfono</label>
                                  <input  type="text" class="form-control form-control1 uppercase" id="telefono" placeholder="telefono"  name="telefono" required data-rule-number=”true” number>
                              </div>
                     </div>
@@ -58,10 +58,10 @@
                                     <label for="email">E-Mail</label>
                                     <input  type="email" class="form-control form-control1" id="email" placeholder="E-MAIL" minlength="5"  name="email" email="true" required>
                                 </div>
-                                <div class="form-group col-md-6">
+                              <!--  <div class="form-group col-md-6">
                                         <label for="password">Nombre Informante</label>
                                         <input  type="text" class="form-control form-control1" id="ninformante" placeholder="NAPELLIDO" minlength="4" name="ninformante"required>
-                                </div>
+                                </div>-->
                     </div>
 
                     <div  class="form-row">
@@ -139,16 +139,16 @@
                                 }
                         }
                 },
-                ninformante:{
+                /*ninformante:{
                         required: true,
                         remote:{
-                                url: window.location.origin+":3000/medico/comprobarusuario",
+                                url: window.location.origin+":8300/medico/comprobarusuario",
                                 type: "post",
                                 data: {
                                                 username : function(){return $( "#ninformante" ).val();}
                                         },
                         },
-                }
+                }*/
         },
         messages: {
 

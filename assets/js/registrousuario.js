@@ -17,7 +17,7 @@ var apiuser = window.location.origin +":3800/api/register";
 var datosuser = window.location.origin +":3800/api/user/";
 var imageuserapi = window.location.origin +":3800/api/get-image-user/";
 var adddelmedicoapi = window.location.origin +":3800/api/adddelmedico";
-var adddelmedico = window.location.origin +":3000/medico/addmedico";
+var adddelmedico = window.location.origin +":8300/medico/addmedico";
 
 function validar(){
     //$.getScript('../assets/js/config.js').done(function(){
@@ -51,13 +51,51 @@ function registrar(){
                 role:'usuario',
                 pais:formjson.pais,
                 telefono: formjson.telefono,
-                ninformante : formjson.ninformante
+                //ninformante : formjson.ninformante
             },
             url: apiuser,
             dataType: 'json',
             success: function (data) {
 
                 if (data ) {
+
+
+                    $.ajax({
+                        type: 'PUT',
+                        data: {
+                            email:formjson.email,
+                            password:formjson.password,
+                            //ninformante : formjson.ninformante
+                        },
+                        url: adddelmedico,
+                        dataType: 'json',
+                        success: function (data) {
+            
+                            if (data ) {
+                                destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');
+                                    
+                           
+                                
+                            }else{
+                               return destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
+                                    
+                    
+                            }
+                        },
+                        error: function(err){
+                           return destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
+           
+                        },
+                        complete : function(){
+                            
+                            
+                                setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, );   
+                         
+                            
+                        }
+                    });
+
+
                     destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');
                         
                         $('#alerplaceholder').html('<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">'+data.message+'</div>')
@@ -78,53 +116,15 @@ function registrar(){
             },
             complete : function(){
                 
-                if (valida == 1){
+              
                     setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, ); 
-                }
-                valida=valida+1;
+                
+               
                 
             }
         });
 
-        $.ajax({
-            type: 'PUT',
-            data: {
-                email:formjson.email,
-                password:formjson.password,
-                ninformante : formjson.ninformante
-            },
-            url: adddelmedico,
-            dataType: 'json',
-            success: function (data) {
-
-                if (data ) {
-                    destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');
-                        
-                        /*$('#alerplaceholder').html('<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">'+data.message+'</div>')
-                        setTimeout(function () { $('#alert').removeClass("show");}, 0, );*/
-                    
-                }else{
-                    destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
-                        
-                       /* $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert"></div>')
-                        setTimeout(function () { $('#alert').removeClass("show"); }, 0, ); */
-                }
-            },
-            error: function(err){
-                destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
-                /*console.log(err)
-                        $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">Ocurrio un problema</div>')
-                        setTimeout(function () { $('#alert').removeClass("show"); }, 0, );*/
-            },
-            complete : function(){
-                
-                if (valida == 1){
-                    setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, );   
-                }
-                valida=valida+1;
-                
-            }
-        });
+    
         
         event.preventDefault();
         event.stopImmediatePropagation();

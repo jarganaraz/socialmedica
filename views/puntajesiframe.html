@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <link rel="stylesheet" href="../assets/styles/display410.css">
+            
+    <script src="../assets/import/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <link rel="stylesheet" href="../assets/import/bootstrap/css/bootstrap.min.css">
+    <script src="../assets/import/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../assets/styles/principal.css">
+    <link rel="stylesheet" href="../assets/import/fontawesome/css/all.min.css">
+
+
+    <link rel="stylesheet" href="../assets/styles/display410.css">
+    <link rel="stylesheet" href="../assets/import/animatecss/animate.min.css">
+    <link rel="stylesheet" href="../assets/styles/animate.css">
+    <link rel="stylesheet" href="../assets/import/fontawesome5/css/all.min.css">
+
+    <link rel="stylesheet" href="../assets/import/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../assets/import/datatables/datatables.min.css">
+    <link rel="stylesheet" href="../assets/import/datatables/Responsive-2.2.2/css/responsive.bootstrap.min.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Social Médica   - Lista Estudios</title>
+</head>
+<body >
+    
+
+
+
+
+<div class="jumbotron container">
+<table id="tablapuntaje" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Contenido Informe</th>
+            <th>Calidad Informe</th>
+            <th>Puntualidad Informe</th>
+            <th>Calificador</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+<script src="../assets/import/datatables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="../assets/import/datatables/datatables.min.js"></script>
+<script src="../assets/import/datatables/Responsive-2.2.2/js/dataTables.responsive.min.js"></script>
+
+<script>
+   $(document).ready(function() {
+    
+
+    $.ajax({
+           type: 'POST',
+           url: window.location.origin +":3800/api/getpuntajes",
+           headers: {
+               'Authorization':localStorage.getItem("token"),
+           },
+           dataType: 'json',
+           data:{
+               id:location.search.slice(4)
+           },
+           success: function (data) {
+   
+            
+
+
+
+
+            var table = $('#tablapuntaje').DataTable( {
+        data: data,
+      pageLength: 10, //pagination only 10,25,50,
+       responsive: true,
+      info: false,
+     //  paging: false,
+       ordering: true,
+      // bLengthChange: true,
+       //language: idioma_espanol,	
+       language: {
+	processing: 	"Procesando...",
+    lengthMenu: 	"Mostrando _MENU_ registros",
+    zeroRecords: 	"No se encontraron resultados",
+    emptyTable: 	"Ningún dato disponible en esta tabla",
+    info: 			"Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+    infoEmpty: 		"Mostrando registros del 0 al 0 de un total de 0 registros",
+    infoFiltered: 	"(filtrado de un total de _MAX_ registros)",
+    infoPostFix: 	"",
+    search: 		"Buscar:",
+    url: 			"",
+    infoThousands: 	",",
+    loadingRecords: "Cargando...",
+    paginate: {
+		first:    "Primero",
+		last:     "Último",
+		next:     "Siguiente",
+		previous: "Anterior"
+	},
+},
+       columns:[
+			{ data: "contenido" },						
+			{ data: "calidad" },
+			{ data: "puntualidad" },
+			{ data: "emitter" },			
+
+		],
+
+
+     });
+
+
+
+
+
+               
+           },
+           error: function(err){
+               
+            
+           },
+       
+   
+       
+       });
+
+
+
+
+
+ });
+
+
+
+
+
+
+
+
+
+
+</script>    
+</body>
+</html>

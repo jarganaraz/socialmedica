@@ -101,7 +101,7 @@ window.location = 'index.html';
                     var container = document.getElementById('container');
                     var i=0;
                    
-                    console.log(data);
+       
 
                     if(!primera){
                         lista.innerHTML = "";
@@ -114,7 +114,7 @@ window.location = 'index.html';
                         //var i;
                         i = i+1;
 
-                        console.log(data.users[i-1]);
+
 
                         adddelstyle(data.users[i-1].medico,1,lista,container);
                         
@@ -154,7 +154,7 @@ function contactar () {
 
 function adddelstyle (data,tipo,lista,container,limpiar){
 
-console.log(data);
+
 
    $.ajax({
        type: 'POST',
@@ -206,8 +206,7 @@ function render(data,respuesta,lista,container){
 
  
     count = count+1;
-    console.log(count);
-    
+
     if(count >= 5){
 
      lista = document.getElementById('listausuarios2');
@@ -342,12 +341,12 @@ function cambiarboton (data,tipo){
            
            if (data2.type === 1){
                
-            document.getElementById(data._id).setAttribute('class','botoneslistausers1 btn btn-success ');
+            document.getElementById(data._id).setAttribute('class','botoneslistausers1 btn btn-success btn-sm ');
             document.getElementById(data._id).innerHTML = 'Contratar';
 
            }else{
  
-            document.getElementById(data._id).setAttribute('class','botoneslistausers1 btn btn-danger');
+            document.getElementById(data._id).setAttribute('class','botoneslistausers1 btn btn-danger btn-sm');
             document.getElementById(data._id).innerHTML = ' Anular  ';
 			
 
@@ -372,12 +371,12 @@ function filtrar (){
 
 
     var filtro = document.getElementById('filtro').value;
-    console.log(filtro);
+
 
 
 if(filtro && filtro != "null"){
 
-console.log("entro");
+
 
 //event.preventDefault();
 //event.stopImmediatePropagation();
@@ -439,7 +438,7 @@ $.ajax({
                 var container = document.getElementById('container');
                 var i=0;
 
-                console.log(data);
+        
 
                 if(!primera){
                     lista.innerHTML = "";
@@ -447,7 +446,7 @@ $.ajax({
                 }
 
                 data.users.forEach(element => {
-                    console.log(data);
+           
                     //var i;
                     i = i+1;
                     adddelstyle(data.users[i-1],1,lista,container);

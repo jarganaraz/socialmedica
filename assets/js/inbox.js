@@ -25,7 +25,7 @@ var count=0;
 
 function pagination(){
 
-    //console.log(url);
+   
     if(!localStorage.getItem('token') || !localStorage.getItem('identity'))
     window.location = 'index.html';
     
@@ -82,7 +82,7 @@ function pagination(){
                            // document.getElementById('listausuarios2').innerHTML="";
                         }
     
-                        console.log(data);
+               
                             
                        data.messages.forEach(element => {
                             //var i;

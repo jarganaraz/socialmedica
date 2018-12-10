@@ -17,6 +17,8 @@ var apiuser = window.location.origin +":3800/api/register";
 var datosuser = window.location.origin +":3800/api/user/";
 var imageuserapi = window.location.origin +":3800/api/get-image-user/";
 var adddelmedicoapi = window.location.origin +":3800/api/adddelmedico";
+var consultamedicoinsti = window.location.origin +":3800/api/consultamedicoxinsti";
+
 
 var primera;
 var identity = JSON.parse(localStorage.getItem("identity"));
@@ -25,7 +27,7 @@ var identity = JSON.parse(localStorage.getItem("identity"));
 function gatewayOpener(){
 if(identity && identity != "null" && identity.role == "clinica" && identity.primera == 1){
 
-    console.log("TEST")
+
 
 
     
@@ -107,6 +109,8 @@ function createdomele(element, atr,val){
 
 function renderperfilexterno(data,respuesta){
 
+    
+
 
     if(data.studytipe){
         var estudios = JSON.parse(data.studytipe);
@@ -161,6 +165,11 @@ image.setAttribute('class','imageperfil img-fluid  rounded ');
 var div2 = createdomele('div','class','col');
 
 var estudiosdiv = createdomele('div','class','row');
+var divestudiosinformo = createdomele('div','class','')
+var labelestudios = createdomele('h6','class','estudiosqueinformo');
+labelestudios.innerHTML = "Estudios que informo:"
+divestudiosinformo.appendChild(labelestudios);
+estudiosdiv.appendChild(divestudiosinformo)
 
 
 for (var prop in estudios) {
@@ -172,14 +181,16 @@ for (var prop in estudios) {
 
 
 var loadbarcontainer = createdomele('div','class','row ');
-var loadbar = createdomele('div','class','progress pgbar');
-loadbar.setAttribute('style','height: 20px;');
-var barra = createdomele('div','class','progress-bar');
-barra.setAttribute('role', 'progressbar');
+/*var loadbar = createdomele('div','class','progress pgbar');
+loadbar.setAttribute('style','height: 20px;');*/
+var loadbar = createdomele('div','class','  rating puntajeestrella');
+loadbar.setAttribute('data-rate-value','6');
+
+/*barra.setAttribute('role', 'progressbar');
 barra.setAttribute('aria-valuenow','25');
 barra.setAttribute('aria-valuemin','0');
 barra.setAttribute('aria-valuemax','100');
-barra.setAttribute('style','width:25%;');
+barra.setAttribute('style','width:80%;');*/
 
 var custombuttons = createdomele('div','class','row botoncontainer');
 var contactarbutton = createdomele('button','value','Contactar');
@@ -199,6 +210,9 @@ vercurriculum.addEventListener("click", vercurriculum1 );
 
 
 var addel = createdomele('button', 'value', "adddel");
+
+
+
 
 addel.setAttribute('class', 'editbutton btn btn-'+ respuesta.atribute);
 addel.setAttribute('id','adddelbutton');
@@ -220,17 +234,79 @@ if(JSON.parse(localStorage.getItem('identity')).role === "clinica"){
     custombuttons.appendChild(addel);
 }
 
-var titulobarra = createdomele('h6',"style","margin-top : 16%;");
+
+
+
+
+var puntuarbtn = createdomele('button','value','puntuarbtn');
+puntuarbtn.innerHTML = 'Calificar';
+puntuarbtn.setAttribute('class', 'btn btn-primary editbutton trigger ');
+
+var divpuntajes = createdomele('div','class','row');
+
+$.ajax({
+    type: 'POST',
+    url: consultamedicoinsti,
+    headers: {
+        'Authorization':localStorage.getItem("token"),
+    },
+    dataType: 'json',
+    data:{
+        medicoid: data._id,
+        instiid: identity._id
+    },
+    success: function (medicoinstidata) {
+
+        
+
+        if(medicoinstidata.opcion == "si"){
+            divpuntajes.appendChild(puntuarbtn);
+        }
+    },
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var titulobarra = createdomele('h6',"style","margin-top : 7%;");
 titulobarra.setAttribute('class','titulobarra');
 titulobarra.innerHTML = "Cumplimiento: ";
 loadbarcontainer.appendChild(titulobarra);
 
+var verpuntosbutton = createdomele('button','id','verpuntuacion');
+verpuntosbutton.setAttribute('idpuntos',data._id);
+verpuntosbutton.setAttribute('id','verpuntos');
+//verpuntosbutton.setAttribute('data-izimodal-iframeurl=','./verpuntos.html?id='+data._id+'');
+//verpuntosbutton.setAttribute('data-izimodal-open=','modalpuntuaciones');
+;document.getElementById('modalpuntuaciones').setAttribute('href','./verpuntos.html?id='+data._id+'');
+verpuntosbutton.innerHTML = "Ver Puntuacion";
+verpuntosbutton.setAttribute('class','btn btn-primary editbutton verpuntos');
+divpuntajes.appendChild(verpuntosbutton);
+
 loadbarcontainer.appendChild(loadbar);
-loadbar.appendChild(barra);
+//loadbar.appendChild(barra);
 
 div2.appendChild(estudiosdiv);
 div2.appendChild(loadbarcontainer);
 div2.appendChild(custombuttons);
+div2.appendChild(divpuntajes)
 div1.appendChild(image);
 div.appendChild(div1);
 div.appendChild(div2);
@@ -255,7 +331,7 @@ var text1 = '<i class="far fa-address-card iconperfil"></i>'+data.name +" "+ dat
 var stat2 = createdomele('div','class','col');
 var txtstat2 = createdomele('h5','class','textotamañores');
 if(data.telefono){
-var text2 = '<i class="fas fa-phone iconperfil"></i>'+data.telefono;
+var text2 = '<i class="fas fa-phone-square iconperfil"></i>'+data.telefono;
 }
 else{
     var text2 = "";
@@ -314,6 +390,64 @@ tree.appendChild(cjumbotron);
 
 body.appendChild(tree);
 
+
+//$(".rating").rate(options);
+
+var options = {
+    max_value: 5,
+    step_size: 0.5,
+    max:20,
+    starSize: 16,
+
+}
+
+   $("#modalpuntuaciones").iziModal({
+           iframe: true,
+           title: "Puntuar",
+           closeButton :true,
+           iframeHeight: window.outerHeight*0.4,
+           iframeURL: "./puntajesiframe.html?id="+document.getElementById('verpuntos').getAttribute('idpuntos')+""
+       });
+
+
+$(".rating").rate({
+    max_value: 5,
+    step_size: 0.5,
+    max:20,
+    starSize: 50,
+    initial_value: verestrellas(),
+    change_once: true,
+   // readonly:true,
+
+    symbols: {
+        utf8_star: {
+            base: '\u2606',
+            hover: '\u2605',
+            selected: '\u2605',
+        },
+        utf8_hexagon: {
+            base: '\u2B21',
+            hover: '\u2B22',
+            selected: '\u2B22',
+        },
+        hearts: '&hearts;',
+        fontawesome_beer: '<i class="fa fa-beer"></i>',
+        fontawesome_star: {
+            base: '<i class="fa fa-star-o"></i>',
+            hover: '<i class="fa fa-star"></i>',
+            selected: '<i class="fa fa-star"></i>',
+        },
+        utf8_emoticons: {
+            base: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            hover: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            selected: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+        },
+      },
+      selected_symbol_type: 'utf8_star', // Must be a key from symbols
+    
+
+});
+
 }
 
 
@@ -370,6 +504,11 @@ image.setAttribute('class','imageperfil img-fluid  rounded ');
 var div2 = createdomele('div','class','col');
 
 var estudiosdiv = createdomele('div','class','row');
+var divestudiosinformo = createdomele('div','class','')
+var labelestudios = createdomele('h6','class','estudiosqueinformo');
+labelestudios.innerHTML = "Estudios que informo:"
+divestudiosinformo.appendChild(labelestudios);
+estudiosdiv.appendChild(divestudiosinformo)
 
 
 
@@ -379,7 +518,7 @@ for (var prop in estudios) {
     estudiosdiv.appendChild(estudio);
 }
 
-
+/*
 var loadbarcontainer = createdomele('div','class','row ');
 var loadbar = createdomele('div','class','progress pgbar');
 loadbar.setAttribute('style','height: 20px;');
@@ -388,7 +527,14 @@ barra.setAttribute('role', 'progressbar');
 barra.setAttribute('aria-valuenow','25');
 barra.setAttribute('aria-valuemin','0');
 barra.setAttribute('aria-valuemax','100');
-barra.setAttribute('style','width:25%;');
+barra.setAttribute('style','width:25%;');*/
+
+var loadbarcontainer = createdomele('div','class','row ');
+/*var loadbar = createdomele('div','class','progress pgbar');
+loadbar.setAttribute('style','height: 20px;');*/
+var loadbar = createdomele('div','class','  rating puntajeestrella');
+loadbar.setAttribute('data-rate-value','6');
+
 
 var vercurriculum = createdomele('button','value','vercurriculum');
 vercurriculum.innerHTML = 'Ver Curriculum';
@@ -413,17 +559,30 @@ if(data.curriculumfile){
     custombuttons.appendChild(vercurriculum);
 }
 
-var titulobarra = createdomele('h6',"style","margin-top : 16%;");
+var titulobarra = createdomele('h6',"style","margin-top : 7%;");
 titulobarra.setAttribute('class','titulobarra');
-titulobarra.innerHTML = "Cumplimiento:";
+titulobarra.innerHTML = "Cumplimiento: ";
 loadbarcontainer.appendChild(titulobarra);
 
+
+//var divpuntajes = createdomele('div','class','row');
+var verpuntosbutton = createdomele('button','id','verpuntuacion');
+verpuntosbutton.setAttribute('idpuntos',data._id);
+verpuntosbutton.setAttribute('id','verpuntos');
+//verpuntosbutton.setAttribute('data-izimodal-iframeurl=','./verpuntos.html?id='+data._id+'');
+//verpuntosbutton.setAttribute('data-izimodal-open=','modalpuntuaciones');
+document.getElementById('modalpuntuaciones').setAttribute('href','./verpuntos.html?id='+data._id+'');
+verpuntosbutton.innerHTML = "Ver Puntuacion";
+verpuntosbutton.setAttribute('class','btn btn-primary editbutton verpuntos');
+custombuttons.appendChild(verpuntosbutton);
+
 loadbarcontainer.appendChild(loadbar);
-loadbar.appendChild(barra);
+//loadbar.appendChild(barra);
 
 div2.appendChild(estudiosdiv);
 div2.appendChild(loadbarcontainer);
 div2.appendChild(custombuttons);
+//div2.appendChild(divpuntajes)
 div1.appendChild(image);
 div.appendChild(div1);
 div.appendChild(div2);
@@ -474,7 +633,7 @@ var text1 = '<i class="far fa-address-card iconperfil"></i>'+data.name +" "+ dat
 var stat2 = createdomele('div','class','col');
 var txtstat2 = createdomele('h5','class','textotamañores');
 if(data.telefono){
-var text2 = '<i class="fas fa-phone iconperfil"></i>'+data.telefono;
+var text2 = '<i class="fas fa-phone-square iconperfil"></i>'+data.telefono;
 }
 else{
     var text2 = "";
@@ -531,7 +690,60 @@ tree.appendChild(cjumbotron);
 
 body.appendChild(tree);
 
+var options = {
+    max_value: 5,
+    step_size: 0.5,
+    max:20,
+    starSize: 16,
 
+}
+
+   $("#modalpuntuaciones").iziModal({
+           iframe: true,
+           title: "Puntuar",
+           closeButton :true,
+           iframeHeight: window.outerHeight*0.4,
+           iframeURL: "./puntajesiframe.html?id="+document.getElementById('verpuntos').getAttribute('idpuntos')+""
+       });
+
+
+$(".rating").rate({
+    max_value: 5,
+    step_size: 0.5,
+    max:20,
+    starSize: 50,
+    initial_value: verestrellas(),
+    change_once: true,
+   // readonly:true,
+
+    symbols: {
+        utf8_star: {
+            base: '\u2606',
+            hover: '\u2605',
+            selected: '\u2605',
+        },
+        utf8_hexagon: {
+            base: '\u2B21',
+            hover: '\u2B22',
+            selected: '\u2B22',
+        },
+        hearts: '&hearts;',
+        fontawesome_beer: '<i class="fa fa-beer"></i>',
+        fontawesome_star: {
+            base: '<i class="fa fa-star-o"></i>',
+            hover: '<i class="fa fa-star"></i>',
+            selected: '<i class="fa fa-star"></i>',
+        },
+        utf8_emoticons: {
+            base: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            hover: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            selected: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+        },
+      },
+      selected_symbol_type: 'utf8_star', // Must be a key from symbols
+    
+
+});
 
 }
 
@@ -539,6 +751,8 @@ body.appendChild(tree);
 /** PERFIL CLINICA PERSONAL **/
 
 function perfilclinicapersonal  (data){
+
+  
 
     if(data.studytipe){
     var estudios = JSON.parse(data.studytipe);
@@ -586,6 +800,11 @@ image.setAttribute('class','imageperfil img-fluid  rounded ');
 var div2 = createdomele('div','class','col');
 
 var estudiosdiv = createdomele('div','class','row');
+var divestudiosinformo = createdomele('div','class','')
+var labelestudios = createdomele('h6','class','estudiosqueinformo');
+labelestudios.innerHTML = "Estudios que informo:"
+divestudiosinformo.appendChild(labelestudios);
+estudiosdiv.appendChild(divestudiosinformo)
 
 
 
@@ -600,8 +819,8 @@ if(data.pais)
 labelpais.setAttribute('src','../assets/images/flags/'+data.pais+'.png');
 
 var loadbarcontainer = createdomele('div','class','row ');
-var loadbar = createdomele('div','class','progress pgbar');
-loadbar.setAttribute('style','height: 20px;');
+var loadbar = createdomele('div','class','  rating puntajeestrella');
+loadbar.setAttribute('data-rate-value','6');
 var barra = createdomele('div','class','progress-bar');
 barra.setAttribute('role', 'progressbar');
 barra.setAttribute('aria-valuenow','25');
@@ -617,10 +836,66 @@ editarbutton.addEventListener('click', editarperfilempresa );
 
 custombuttons.appendChild(editarbutton);
 
-var titulobarra = createdomele('h6',"style","margin-top : 16%;");
+
+
+
+var puntuarbtn = createdomele('button','value','puntuarbtn');
+puntuarbtn.innerHTML = 'Calificar';
+puntuarbtn.setAttribute('class', 'btn btn-primary editbutton trigger ');
+
+//var divpuntajes = createdomele('div','class','row');
+
+$.ajax({
+    type: 'POST',
+    url: consultamedicoinsti,
+    headers: {
+        'Authorization':localStorage.getItem("token"),
+    },
+    dataType: 'json',
+    data:{
+        medicoid: identity._id,
+        instiid: data._id
+    },
+    success: function (medicoinstidata) {
+
+        
+
+        if(medicoinstidata.opcion == "si"){
+            custombuttons.appendChild(puntuarbtn);
+        }
+    },
+});
+
+
+
+
+
+
+
+var titulobarra = createdomele('h6',"style","margin-top : 7%;");
 titulobarra.setAttribute('class','titulobarra');
 titulobarra.innerHTML = "Cumplimiento: ";
 loadbarcontainer.appendChild(titulobarra);
+
+var verpuntosbutton = createdomele('button','id','verpuntuacion');
+verpuntosbutton.setAttribute('idpuntos',data._id);
+verpuntosbutton.setAttribute('id','verpuntos');
+//verpuntosbutton.setAttribute('data-izimodal-iframeurl=','./verpuntos.html?id='+data._id+'');
+//verpuntosbutton.setAttribute('data-izimodal-open=','modalpuntuaciones');;
+document.getElementById('modalpuntuaciones').setAttribute('href','./verpuntos.html?id='+data._id+'');
+
+verpuntosbutton.innerHTML = "Ver Puntuacion";
+verpuntosbutton.setAttribute('class','btn btn-primary editbutton verpuntos');
+custombuttons.appendChild(verpuntosbutton);
+
+
+
+
+
+
+
+
+
 
 loadbarcontainer.appendChild(loadbar);
 loadbar.appendChild(barra);
@@ -630,6 +905,7 @@ loadbar.appendChild(barra);
 div2.appendChild(estudiosdiv);
 div2.appendChild(loadbarcontainer);
 div2.appendChild(custombuttons);
+//div2.appendChild(divpuntajes)
 div1.appendChild(image);
 div.appendChild(div1);
 div.appendChild(div2);
@@ -714,13 +990,74 @@ tree.appendChild(cjumbotron);
 body.appendChild(tree);
 
 
+var options = {
+    max_value: 5,
+    step_size: 0.5,
+    max:20,
+    starSize: 16,
+
+}
+
+   $("#modalpuntuaciones").iziModal({
+           iframe: true,
+           title: "Puntuar",
+           closeButton :true,
+           iframeHeight: window.outerHeight*0.4,
+           iframeURL: "./puntajesiframe.html?id="+document.getElementById('verpuntos').getAttribute('idpuntos')+""
+       });
+
+
+$(".rating").rate({
+    max_value: 5,
+    step_size: 0.5,
+    max:20,
+    starSize: 50,
+    initial_value: verestrellas(),
+    change_once: true,
+   // readonly:true,
+
+    symbols: {
+        utf8_star: {
+            base: '\u2606',
+            hover: '\u2605',
+            selected: '\u2605',
+        },
+        utf8_hexagon: {
+            base: '\u2B21',
+            hover: '\u2B22',
+            selected: '\u2B22',
+        },
+        hearts: '&hearts;',
+        fontawesome_beer: '<i class="fa fa-beer"></i>',
+        fontawesome_star: {
+            base: '<i class="fa fa-star-o"></i>',
+            hover: '<i class="fa fa-star"></i>',
+            selected: '<i class="fa fa-star"></i>',
+        },
+        utf8_emoticons: {
+            base: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            hover: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            selected: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+        },
+      },
+      selected_symbol_type: 'utf8_star', // Must be a key from symbols
+    
+
+});
    
 }
 
 
 /** PERFIL CLINICA EXTERNO **/
 
+
+
+
 function perfilclinicaexterno  (data){
+
+
+
+
 
     if(data.studytipe){
     var estudios = JSON.parse(data.studytipe);
@@ -748,7 +1085,7 @@ if(data.image && data.image != "null"){
     var image = createdomele('img','src','../assets/images/user.png');    
 }
 
- console.log(image.height);
+
 
  var imagenurl = imageuser + data.image;
 
@@ -776,6 +1113,11 @@ image.setAttribute('class','imageperfil img-fluid  rounded ');
 var div2 = createdomele('div','class','col');
 
 var estudiosdiv = createdomele('div','class','row');
+var divestudiosinformo = createdomele('div','class','')
+var labelestudios = createdomele('h6','class','estudiosqueinformo');
+labelestudios.innerHTML = "Estudios que informo:"
+divestudiosinformo.appendChild(labelestudios);
+estudiosdiv.appendChild(divestudiosinformo)
 
 
 
@@ -787,14 +1129,17 @@ for (var prop in estudios) {
 
 
 var loadbarcontainer = createdomele('div','class','row ');
-var loadbar = createdomele('div','class','progress pgbar');
-loadbar.setAttribute('style','height: 20px;');
-var barra = createdomele('div','class','progress-bar');
+var loadbar = createdomele('div','class','  rating puntajeestrella');
+loadbar.setAttribute('data-rate-value','6');
+
+/*var loadbar = createdomele('div','class','progress pgbar');
+loadbar.setAttribute('style','height: 20px;');*/
+/*var barra = createdomele('div','class','progress-bar');
 barra.setAttribute('role', 'progressbar');
 barra.setAttribute('aria-valuenow','25');
 barra.setAttribute('aria-valuemin','0');
 barra.setAttribute('aria-valuemax','100');
-barra.setAttribute('style','width:25%;');
+barra.setAttribute('style','width:25%;');*/
 
 var custombuttons = createdomele('div','class','row botoncontainer');
 var contactarbutton = createdomele('button','value','Contactar');
@@ -805,19 +1150,67 @@ contactarbutton.setAttribute('href','contacto.html?id=' + data._id);
 
 custombuttons.appendChild(contactarbutton);
 
-var titulobarra = createdomele('h6',"style","margin-top : 16%;");
+
+
+
+var puntuarbtn = createdomele('button','value','puntuarbtn');
+puntuarbtn.innerHTML = 'Calificar';
+puntuarbtn.setAttribute('class', 'btn btn-primary editbutton trigger ');
+
+//var divpuntajes = createdomele('div','class','row');
+
+$.ajax({
+    type: 'POST',
+    url: consultamedicoinsti,
+    headers: {
+        'Authorization':localStorage.getItem("token"),
+    },
+    dataType: 'json',
+    data:{
+        medicoid: identity._id,
+        instiid: data._id
+    },
+    success: function (medicoinstidata) {
+
+        
+
+        if(medicoinstidata.opcion == "si"){
+            custombuttons.appendChild(puntuarbtn);
+        }
+    },
+});
+
+
+
+
+
+
+
+var titulobarra = createdomele('h6',"style","margin-top : 7%;");
 titulobarra.setAttribute('class','titulobarra');
-titulobarra.innerHTML = "Cumplimiento:";
+titulobarra.innerHTML = "Cumplimiento: ";
 loadbarcontainer.appendChild(titulobarra);
 
+var verpuntosbutton = createdomele('button','id','verpuntuacion');
+verpuntosbutton.setAttribute('idpuntos',data._id);
+verpuntosbutton.setAttribute('id','verpuntos');
+//verpuntosbutton.setAttribute('data-izimodal-iframeurl=','./verpuntos.html?id='+data._id+'');
+//verpuntosbutton.setAttribute('data-izimodal-open=','modalpuntuaciones');
+document.getElementById('modalpuntuaciones').setAttribute('href','./verpuntos.html?id='+data._id+'');
+verpuntosbutton.innerHTML = "Ver Puntuacion";
+verpuntosbutton.setAttribute('class','btn btn-primary editbutton verpuntos');
+custombuttons.appendChild(verpuntosbutton);
+
 loadbarcontainer.appendChild(loadbar);
-loadbar.appendChild(barra);
+//loadbar.appendChild(barra);
+
 
 
 
 div2.appendChild(estudiosdiv);
 div2.appendChild(loadbarcontainer);
 div2.appendChild(custombuttons);
+//div2.appendChild(divpuntajes)
 div1.appendChild(image);
 div.appendChild(div1);
 div.appendChild(div2);
@@ -896,6 +1289,63 @@ cjumbotron.appendChild(perfil);
 tree.appendChild(cjumbotron);
 
 body.appendChild(tree);
+
+
+
+var options = {
+    max_value: 5,
+    step_size: 0.5,
+    max:20,
+    starSize: 16,
+
+}
+
+   $("#modalpuntuaciones").iziModal({
+           iframe: true,
+           title: "Puntuar",
+           closeButton :true,
+           iframeHeight: window.outerHeight*0.4,
+           iframeURL: "./puntajesiframe.html?id="+document.getElementById('verpuntos').getAttribute('idpuntos')+""
+       });
+
+
+$(".rating").rate({
+    max_value: 5,
+    step_size: 0.5,
+    max:20,
+    starSize: 50,
+    initial_value: verestrellas(),
+    change_once: true,
+   // readonly:true,
+
+    symbols: {
+        utf8_star: {
+            base: '\u2606',
+            hover: '\u2605',
+            selected: '\u2605',
+        },
+        utf8_hexagon: {
+            base: '\u2B21',
+            hover: '\u2B22',
+            selected: '\u2B22',
+        },
+        hearts: '&hearts;',
+        fontawesome_beer: '<i class="fa fa-beer"></i>',
+        fontawesome_star: {
+            base: '<i class="fa fa-star-o"></i>',
+            hover: '<i class="fa fa-star"></i>',
+            selected: '<i class="fa fa-star"></i>',
+        },
+        utf8_emoticons: {
+            base: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            hover: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+            selected: [0x1F625, 0x1F613, 0x1F612, 0x1F604],
+        },
+      },
+      selected_symbol_type: 'utf8_star', // Must be a key from symbols
+    
+
+});
    
 }
 
@@ -936,12 +1386,14 @@ function obtaindata (id){
                             case 1:
                                // console.log("render perfil personal usuario");
                                 renderperfilmio(data.user);
+                                verestrellas(data.user);
                             break;
                         
                             case 0:
                            // console.log("render perfil externo usuario");
                                 //renderperfilexterno(data.user);
                                 adddelstyle(data.user,1);
+                                verestrellas(data.user);
                             break;
                         }                 
                     break;
@@ -950,12 +1402,14 @@ function obtaindata (id){
                         switch (personal) {
                             case 1:
                                 //console.log("render perfil personal clinica");                             
-                                perfilclinicapersonal(data.user);       
+                                perfilclinicapersonal(data.user); 
+                                verestrellas(data.user);      
                             break;
                         
                             case 0:
                                // console.log("render perfil externo clinica");
                                 perfilclinicaexterno(data.user);
+                                verestrellas(data.user);
                             break;
                         }
                     break;
@@ -968,7 +1422,7 @@ function obtaindata (id){
             }
         },
         error: function(err){
-            console.log(err);
+        
                     $('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">Ocurrio un Problema</div>')
                     setTimeout(function () { $('#alert').removeClass("show"); }, 2000, );
 
@@ -992,7 +1446,7 @@ function vercurriculum1 () {
  function adddelstyle (data,tipo){
      var respuesta;
 
-     console.log(data);
+ 
 
     $.ajax({
         type: 'POST',
@@ -1008,10 +1462,7 @@ function vercurriculum1 () {
         dataType: 'json',
         success: function (data2) {
 
-            console.log(data2);
 
-            console.log(data2.type);
-            console.log(primera)
 
             if (data2.type == 1){
                 if(primera){
@@ -1032,6 +1483,7 @@ function vercurriculum1 () {
                 
                     primera = 1;
                     renderperfilexterno(data,respuesta);
+
                 }
             }
 
@@ -1045,3 +1497,36 @@ function vercurriculum1 () {
 
  }
 
+ function verestrellas(data){
+
+    if(data && data._id){
+    $.ajax({
+           type: 'POST',
+           url: window.location.origin +":3800/api/getpuntaje",
+           headers: {
+               'Authorization':localStorage.getItem("token"),
+           },
+           dataType: 'json',
+           data:{
+               id:data._id
+           },
+           success: function (data) {
+   
+             
+   
+               $(".rating").rate("setValue",data.prom);
+               
+           },
+           error: function(err){
+               
+               $(".rating").rate("setValue",0);
+           },
+       
+   
+       
+       });
+   
+    }else{
+        $(".rating").rate("setValue",0);
+    }
+   }
