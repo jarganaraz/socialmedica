@@ -138,8 +138,9 @@ function contactar () {
 
 function adddelstyle (data,tipo,lista,container,limpiar){
     var respuesta;
-
-   $.ajax({
+    respuesta = {atribute : "success", html : "Contratar"};
+    render(data,respuesta,lista,container);
+  /* $.ajax({
        type: 'POST',
        url: adddelmedicoapi,
        headers: {
@@ -178,7 +179,7 @@ function adddelstyle (data,tipo,lista,container,limpiar){
 
            }    
            }
-       })
+       })*/
 
 }
 
@@ -272,7 +273,7 @@ function render(data,respuesta,lista,container){
     var buttoncontratar = createdomele('button','class','btn botoneslistausers1 btn-sm btn-'+ respuesta.atribute);
     buttoncontratar.innerHTML = respuesta.html;
     buttoncontratar.setAttribute('id',data._id);
-    buttoncontratar.addEventListener('click',function(){cambiarboton(data,0)});
+    //buttoncontratar.addEventListener('click',function(){cambiarboton(data,0)});
   
     var buttoncontactar = createdomele('button','class','btn btn-primary botoneslistausers btn-sm');
     buttoncontactar.innerHTML = "Contactar";

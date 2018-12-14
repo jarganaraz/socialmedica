@@ -67,7 +67,7 @@ function enviarmailrecuperacion(){
                 document.getElementById('loading').setAttribute('display','none');
                 document.getElementById("loading").style.display = "none";
                 
-                setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, ); 
+               // setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, ); 
             }
         
         });

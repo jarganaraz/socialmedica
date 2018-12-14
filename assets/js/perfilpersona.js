@@ -27,11 +27,6 @@ var identity = JSON.parse(localStorage.getItem("identity"));
 function gatewayOpener(){
 if(identity && identity != "null" && identity.role == "clinica" && identity.primera == 1){
 
-
-
-
-    
-
      $('#modal').iziModal('destroy');
     
     $("#modal").iziModal({
@@ -43,25 +38,15 @@ if(identity && identity != "null" && identity.role == "clinica" && identity.prim
         //iframeHeight: 800,
        iframeURL: "./gateway.html"
     });
-    
-     
+
        // event.preventDefault();
         $('#modal').iziModal('open');
-   
-    
-
 
     identity.primera = 0;
 
     localStorage.setItem("identity",JSON.stringify(identity));
-
-
 }
-
 }
-
-
-
 
 function validar(){
 
@@ -96,7 +81,6 @@ function renderview(){
             window.location = "index.html";
         }
     }
-
 }
 
 function createdomele(element, atr,val){
@@ -108,9 +92,6 @@ function createdomele(element, atr,val){
 }
 
 function renderperfilexterno(data,respuesta){
-
-    
-
 
     if(data.studytipe){
         var estudios = JSON.parse(data.studytipe);
@@ -171,14 +152,11 @@ labelestudios.innerHTML = "Estudios que informo:"
 divestudiosinformo.appendChild(labelestudios);
 estudiosdiv.appendChild(divestudiosinformo)
 
-
 for (var prop in estudios) {
     var estudio = createdomele('h6','class','btn btn-outline-success botonestudio');
     estudio.innerHTML = prop.toUpperCase();
     estudiosdiv.appendChild(estudio);
 }
-
-
 
 var loadbarcontainer = createdomele('div','class','row ');
 /*var loadbar = createdomele('div','class','progress pgbar');
@@ -199,7 +177,6 @@ contactarbutton.setAttribute('class', 'btn btn-primary editbutton');
 contactarbutton.setAttribute('href','contacto.html?id=' + data._id);
 contactarbutton.addEventListener("click",contactar);
 
-
 var vercurriculum = createdomele('button','value','vercurriculum');
 vercurriculum.innerHTML = 'Ver Curriculum';
 vercurriculum.setAttribute('class', 'btn btn-primary editbutton');
@@ -208,18 +185,12 @@ if(data.curriculumfile){
 }
 vercurriculum.addEventListener("click", vercurriculum1 );
 
-
 var addel = createdomele('button', 'value', "adddel");
-
-
-
 
 addel.setAttribute('class', 'editbutton btn btn-'+ respuesta.atribute);
 addel.setAttribute('id','adddelbutton');
 addel.innerHTML = respuesta.html;
 addel.addEventListener("click", function(){adddelstyle(data,0)});
-
-
 
 custombuttons.appendChild(contactarbutton);
 
@@ -233,9 +204,6 @@ if(data.curriculumfile){
 if(JSON.parse(localStorage.getItem('identity')).role === "clinica"){
     custombuttons.appendChild(addel);
 }
-
-
-
 
 
 var puntuarbtn = createdomele('button','value','puntuarbtn');
@@ -256,8 +224,6 @@ $.ajax({
         instiid: identity._id
     },
     success: function (medicoinstidata) {
-
-        
 
         if(medicoinstidata.opcion == "si"){
             divpuntajes.appendChild(puntuarbtn);
@@ -395,6 +361,7 @@ body.appendChild(tree);
 
 var options = {
     max_value: 5,
+    initial_value: 0,
     step_size: 0.5,
     max:20,
     starSize: 16,
@@ -403,19 +370,20 @@ var options = {
 
    $("#modalpuntuaciones").iziModal({
            iframe: true,
-           title: "Puntuar",
+           title: "Ver Calificacion",
            closeButton :true,
            iframeHeight: window.outerHeight*0.4,
            iframeURL: "./puntajesiframe.html?id="+document.getElementById('verpuntos').getAttribute('idpuntos')+""
        });
 
-
+console.log("creandorating");
 $(".rating").rate({
     max_value: 5,
+    initial_value: 0,
     step_size: 0.5,
     max:20,
     starSize: 50,
-    initial_value: verestrellas(),
+    initial_value: verestrellas(data),
     change_once: true,
    // readonly:true,
 
@@ -692,6 +660,7 @@ body.appendChild(tree);
 
 var options = {
     max_value: 5,
+    initial_value: 0,
     step_size: 0.5,
     max:20,
     starSize: 16,
@@ -706,13 +675,14 @@ var options = {
            iframeURL: "./puntajesiframe.html?id="+document.getElementById('verpuntos').getAttribute('idpuntos')+""
        });
 
-
+console.log("creandorating");
 $(".rating").rate({
     max_value: 5,
+    initial_value: 0,
     step_size: 0.5,
     max:20,
     starSize: 50,
-    initial_value: verestrellas(),
+    initial_value: verestrellas(data),
     change_once: true,
    // readonly:true,
 
@@ -991,6 +961,7 @@ body.appendChild(tree);
 
 
 var options = {
+    initial_value: 0,
     max_value: 5,
     step_size: 0.5,
     max:20,
@@ -1006,13 +977,13 @@ var options = {
            iframeURL: "./puntajesiframe.html?id="+document.getElementById('verpuntos').getAttribute('idpuntos')+""
        });
 
-
+console.log("creandorating");
 $(".rating").rate({
     max_value: 5,
     step_size: 0.5,
     max:20,
     starSize: 50,
-    initial_value: verestrellas(),
+    initial_value: verestrellas(data),
     change_once: true,
    // readonly:true,
 
@@ -1294,6 +1265,7 @@ body.appendChild(tree);
 
 var options = {
     max_value: 5,
+    initial_value: 0,
     step_size: 0.5,
     max:20,
     starSize: 16,
@@ -1308,13 +1280,14 @@ var options = {
            iframeURL: "./puntajesiframe.html?id="+document.getElementById('verpuntos').getAttribute('idpuntos')+""
        });
 
-
+console.log("creandorating");
 $(".rating").rate({
     max_value: 5,
+    initial_value: 0,
     step_size: 0.5,
     max:20,
     starSize: 50,
-    initial_value: verestrellas(),
+    initial_value: verestrellas(data),
     change_once: true,
    // readonly:true,
 
@@ -1386,14 +1359,14 @@ function obtaindata (id){
                             case 1:
                                // console.log("render perfil personal usuario");
                                 renderperfilmio(data.user);
-                                verestrellas(data.user);
+                               // verestrellas(data.user);
                             break;
                         
                             case 0:
                            // console.log("render perfil externo usuario");
                                 //renderperfilexterno(data.user);
                                 adddelstyle(data.user,1);
-                                verestrellas(data.user);
+                               // verestrellas(data.user);
                             break;
                         }                 
                     break;
@@ -1403,13 +1376,13 @@ function obtaindata (id){
                             case 1:
                                 //console.log("render perfil personal clinica");                             
                                 perfilclinicapersonal(data.user); 
-                                verestrellas(data.user);      
+                               // verestrellas(data.user);      
                             break;
                         
                             case 0:
                                // console.log("render perfil externo clinica");
                                 perfilclinicaexterno(data.user);
-                                verestrellas(data.user);
+                               // verestrellas(data.user);
                             break;
                         }
                     break;
@@ -1513,7 +1486,7 @@ function vercurriculum1 () {
            success: function (data) {
    
              
-   
+            console.log("asignandoestrellas")
                $(".rating").rate("setValue",data.prom);
                
            },

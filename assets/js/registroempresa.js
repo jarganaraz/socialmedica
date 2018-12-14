@@ -58,64 +58,25 @@ function registrar(){
             dataType: 'json',
             success: function (data) {
 
-                if (data ) {   
-                    destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');             
+                
+                    destroytoast('<i class="fas fa-check" style="color:green"></i> Registrado Correctamente!');             
        
  
                     
-                }else{         
-                    destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');        
-       
-          
-                }
+               
             },
             error: function(err){
                 destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
       
             },
             complete: function(){
-                if (valida == 1){
+               
                     setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, );   
-                    }
-                    valida=valida+1;
+              
             }
         });
         
 
-        $.ajax({
-            type: 'PUT',
-            data: {
-                email:formjson.email,
-                name:formjson.name,
-            },
-            url: addempresa,
-            dataType: 'json',
-            success: function (data) {
-
-                if (data ) {
-                    destroytoast('<i class="fas fa-check" style="color:green"></i> Enviado Correctamente!');
-                        
-                        /*$('#alerplaceholder').html('<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">'+data.message+'</div>')
-                        setTimeout(function () { $('#alert').removeClass("show");}, 0, );*/
-                    
-                }else{
-                    destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
-                        /*$('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">'+data.message+'</div>')
-                        setTimeout(function () { $('#alert').removeClass("show"); }, 0, ); */
-                }
-            },
-            error: function(err){
-                destroytoast('<i class="fas fa-exclamation-triangle"></i>Ocurrio un Problema!!');
-                        /*$('#alerplaceholder').html('<div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">Ocurrio un problema</div>')
-                        setTimeout(function () { $('#alert').removeClass("show"); }, 0, );*/
-            },
-            complete : function(){
-                if (valida == 1){
-                    setTimeout(function () { window.parent.$('#modal').iziModal('close');  }, 2000, ); 
-                }
-                valida=valida+1;
-            }
-        });
         
         event.preventDefault();
         event.stopImmediatePropagation();
@@ -126,7 +87,7 @@ function registrar(){
 
 function inittoast(){       
     iziToast.show({
-    title: '<i class="fas fa-spinner fa-pulse" style="color:green"></i> Enviando correo de Recuperacion',
+    title: '<i class="fas fa-spinner fa-pulse" style="color:green"></i> Enviando datos al servidor',
     //message: ' <i class="fas fa-spinner fa-pulse"></i> What would you like to add?',
     position:'center',
     timeout: false,

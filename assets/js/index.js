@@ -113,7 +113,7 @@ function registromedicoopener(){
     $('#modal').iziModal('destroy');
        $("#modal").iziModal({
            iframe: true,
-           title: "Registro Medico",
+           title: "Medico",
            closeButton :true,
            iframeHeight: window.outerHeight*0.8,
            iframeURL: "./registropersona.html"
@@ -134,7 +134,7 @@ function registromedicoopener(){
     $('#modal').iziModal('destroy');
        $("#modal").iziModal({
            iframe: true,
-           title: "Registro Clinica",
+           title: "Clinica",
            closeButton :true,
            iframeHeight: window.outerHeight*0.8,
            iframeURL: "./registroempresa.html"

@@ -19,12 +19,9 @@ var adddelmedicoapi = window.location.origin +":3800/api/adddelmedico";
 
 function loadconfig(){
 
-
         llenarcampos();
-
   
 }
-
 
 
 function llenarcampos () {
@@ -137,9 +134,7 @@ function modificar () {
         event.stopImmediatePropagation();
     
 
-
          /** Subir files**/
-
 
         var formData = new FormData($(this)[0]);
 

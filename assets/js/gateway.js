@@ -75,7 +75,6 @@ inittoast();
          
         iziToast.show({
         title: '<i class="fas fa-spinner fa-pulse" style="color:green"></i> Enviando correo de Contacto',
-        //message: ' <i class="fas fa-spinner fa-pulse"></i> What would you like to add?',
         position:'center',
         timeout: false,
         progressBar:false,
