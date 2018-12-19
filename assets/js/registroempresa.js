@@ -43,7 +43,7 @@ function registrar(){
         $.ajax({
             type: 'POST',
             data: {
-                email:formjson.email,
+                email:formjson.email.toUpperCase(),
                 name : formjson.name,
                 formadepago:formjson.formadepago,
                 tporespuesta:formjson.tporespuesta,

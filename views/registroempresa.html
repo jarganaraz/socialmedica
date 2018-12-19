@@ -31,7 +31,7 @@
         <div class="jumbotron jumbotronmodal container animated fadeIn">
             
             <h2>
-                        Datos Clínica
+                        Datos Institución
             </h2>
        
            <form class="registrousuario" style="margin:auto;" id="registoruser"> 
@@ -113,6 +113,7 @@
          $.validator.messages.required = 'Este campo es obligatorio';
          $.validator.messages.remote = 'Se encuentra en uso';
          $.validator.messages.email = 'Debe ingresar un E-mail valido';
+         $.validator.messages.number = "Por favor ingrese solo números ej. 2615123456";
          $.validator.messages.minlength= jQuery.validator.format("Debe tener mas de {0} caracteres.");
          
          $("#registoruser").validate({
@@ -124,7 +125,7 @@
                         },
                         telefono: {
                                 required: true,
-                                digits: true,                       
+                                number: true,                       
                         },
                         name:{
                                 required:true

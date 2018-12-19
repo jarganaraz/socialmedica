@@ -171,7 +171,7 @@ function loginrecordado(email,password){
     $.ajax({
         type: 'POST',
         data: {
-            email:email,
+            email:email.toUpperCase(),
             password:password,
             gettoken:true
         },

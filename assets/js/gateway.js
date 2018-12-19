@@ -11,7 +11,7 @@ inittoast();
     $("body").off("submit", "form");
 
     $("form" ).submit(function( event ) {
-
+var iduser;
         var data =  $(this).serializeArray();
 
         var formjson = {};
@@ -19,7 +19,11 @@ inittoast();
 				formjson[obj.name] = obj.value;
             });
 
-
+            if(localStorage.getItem('identity')){
+                iduser = JSON.parse(localStorage.getItem('identity'))._id
+            }else{
+                iduser = 0
+            }
 
             $.ajax({
                 type: 'POST',
@@ -31,7 +35,8 @@ inittoast();
                     name: formjson.name,
                     email: formjson.email,
                     message: formjson.message,
-                    telefono: formjson.telefono
+                    telefono: formjson.telefono,
+                    id:iduser
                 },
                 dataType: 'json',
                 success: function (data) {

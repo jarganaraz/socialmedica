@@ -46,7 +46,7 @@ function registrar(){
             data: {
                 name:formjson.name,
                 surname : formjson.surname,
-                email:formjson.email,
+                email:formjson.email.toUpperCase(),
                 password:formjson.password,
                 role:'usuario',
                 pais:formjson.pais,

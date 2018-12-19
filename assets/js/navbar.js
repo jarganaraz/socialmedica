@@ -121,7 +121,7 @@ window.open("http://192.168.2.192/viewer/index.php/");
 else
 var paramuri = response.toString();
 paramuri = paramuri.replace('@','%40');
-//console.log(paramuri);
+console.log("http://192.168.2.192/viewer/index.php/usuarios/fastReport/"+paramuri);
 window.open("http://192.168.2.192/viewer/index.php/usuarios/fastReport/"+paramuri);
 	},
 	error: function(err){

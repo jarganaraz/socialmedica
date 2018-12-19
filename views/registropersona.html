@@ -109,6 +109,8 @@
  $.validator.messages.required = 'Este campo es obligatorio';
  $.validator.messages.remote = 'El usuario se encuentra en uso';
  $.validator.messages.email = 'Debe ingresar un E-mail valido';
+ $.validator.messages.number = "Por favor ingrese solo números ej. 2615123456";
+ $.validator.messages.telefono = "Por favor ingrese solo números ej. 2615123456";
  $.validator.messages.minlength= jQuery.validator.format("Debe tener mas de {0} caracteres.");
  
  $("#registoruser").validate({
@@ -120,7 +122,7 @@
                 },
                 telefono: {
                         required: true,
-                        digits: true,                       
+                        number: true,                       
                 },
                 name:{
                         required:true
@@ -154,7 +156,8 @@
 
                 equalTo: "Las contraseñas deben coincidir",
                 number: "Ingrese un numero valido",
-                digits: "Solo se aceptan digitos",    
+                digits: "Por favor ingrese solo números ej. 2615123456",
+                //telefono = "Por favor ingrese solo números ej. 2615123456",   
         }
         
  });

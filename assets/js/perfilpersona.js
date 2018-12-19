@@ -896,7 +896,7 @@ var perfil = createdomele('div','class','col');
 
 var divn = createdomele('div','class','row');
 var nombre = createdomele('h5','class','textotamañores');
-nombre.innerHTML = "Nombre de la Clínica: "
+nombre.innerHTML = "Nombre de la Institución: "
 var nombreapi = createdomele('h5','class','textotamañores');
 nombreapi.innerHTML = data.name;
 divn.appendChild(nombre);
@@ -1198,7 +1198,7 @@ var perfil = createdomele('div','class','col');
 
 var divn = createdomele('div','class','row');
 var nombre = createdomele('h5','class','textotamañores');
-nombre.innerHTML = "Nombre de la Clínica: "
+nombre.innerHTML = "Nombre de la Institución: "
 var nombreapi = createdomele('h5','class','textotamañores');
 nombreapi.innerHTML = data.name;
 divn.appendChild(nombre);
